@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 16:51:54 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/01 20:12:55 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/05 14:26:57 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,22 @@ void swap(int *a, int *b)
 	*a = *b;
 	*b = i ;
 }
-void	sa(int *tab)
+void	sa(T_stack *a)
 {
-	ft_printf("sa%d %d\n",tab[0],tab[1]);
+	swap (&a->data[0],&a->data[1]);
+	ft_printf("sa");
 }
 
-void	sb(int *tab)
+void	sb(T_stack *b)
 {
-	ft_printf("sb%d %d\n",tab[0],tab[1]);
+	swap (&b->data[0],&b->data[1]);
+	ft_printf("sb");
 }
 
 
-void	ss(int *tab, int *tab2)
+void	ss(T_stack *a, T_stack *b)
 {
-	ft_printf("sa%d %d\n",tab[0],tab[1]);
-	ft_printf("sb%d %d",tab2[0],tab2[1]);
+	sa(a);
+	sb(b);
+	ft_printf("ss");
 }

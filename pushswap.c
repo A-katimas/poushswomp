@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/01 21:21:16 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/05 14:03:00 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ void	push(int *tab)
 	}
 }
 
-int		ft_pushswap(int *tab , int taille)
+int		ft_pushswap(T_stack *a, T_stack *b)
 {
 
-	resoufeur(tab,taille);
-	push(tab);
-	return (*tab);
+	resoufeur(a,b);
+	push(a->data);
+	return (a->taille);
 }
 
-void	visualiseur(int *tab, int *tab2)
+void	visualiseur(T_stack *a, T_stack *b)
 {
 	int i = 0;
 	ft_printf("tab1\t\t\t||\ttab2\n");
 	system("clear");
-	while (i!=15)
+	while (i != a->taille && i != b->taille)
 	{
-		ft_printf("%d\t\t\t||\t%d\n",tab[i],tab2[i]);
+		ft_printf("%d\t\t\t||\t%d\n",a->data[i],b->data[i]);
 		i++;
 	}
 	usleep(200000);

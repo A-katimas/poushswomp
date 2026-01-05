@@ -2,7 +2,10 @@ NAME = tools.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
 
-SOURCE =	swap.c
+SOURCE =	swap.c \
+			push.c \
+			rotation.c \
+			reverserota.c \
 
 OBJ = $(SOURCE:.c=.o)
 

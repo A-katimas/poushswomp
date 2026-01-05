@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/01 20:48:46 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/05 13:58:45 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include "libft/libft.h"
 # include "tools/toolsswap.h"
 
-int		*resoufeur(int *tab, int taille);
+int		*resoufeur(T_stack *a, T_stack*b);
 int		resoula(int a);
 int		resouchien(int a);
 void	push(int *tab);
-int		ft_pushswap(int *tab, int taille);
+int		ft_pushswap(T_stack *a, T_stack *b);
 
 
-void	visualiseur(int *tab, int *tab2);
+void	visualiseur(T_stack *a, T_stack *b);
 
 #endif

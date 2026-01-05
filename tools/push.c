@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 18:08:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 14:30:31 by jtardieu         ###   ########.fr       */
+/*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
+/*   Updated: 2026/01/05 13:45:00 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "toolsswap.h"
 
-int main(int ac , char **av)
+void pa(int *tab, int *tab2)
 {
-	(void) ac;
-	(void) av;
-	int tableau [] = {8,4,6,2,0,10,5,17,1000000,300,40,36,29,114,3};
-	int *tab = ft_calloc(14,sizeof(int));
-	//int tab2[15];
-
-	T_stack a = {tableau,14};
-	T_stack b = {tab,14};
-
-	ft_pushswap(&a,&b);
-	sa(&a);
-	//visualiseur(tableau, tab2);
+	tab[0] = tab2[0];
 }
+
+void pb(int *tab, int *tab2)
+{
+	tab2[0] = tab[0];
+}
+
 
 
