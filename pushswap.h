@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 13:58:45 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:14:20 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include "tools/toolsswap.h"
+# include "orders/order.h"
 
 int		*resoufeur(T_stack *a, T_stack*b);
 int		resoula(int a);

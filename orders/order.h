@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   order.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 18:31:58 by jtardieu         ###   ########.fr       */
+/*   Created: 2026/01/05 17:45:06 by jtardieu          #+#    #+#             */
+/*   Updated: 2026/01/05 18:06:40 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#ifndef ORDER_H
+# define ORDER_H
 
-void pa(T_stack *a, T_stack *b)
-{
-	b->taille++;
-	down(b);
-	b->data[0] = a->data[0];
-	a->data[0] = 0;
-	up(a);
-	a->taille--;
-	ft_printf("pa\n");
-}
+# include "../tools/toolsswap.h"
 
-void pb(T_stack *a, T_stack *b)
-{
-	a->taille++;
-	down(a);
-	a->data[0] = b->data[0];
-	b->data[0] = 0;
-	up(b);
-	b->taille--;
-	ft_printf("pb\n");
-}
+	void bubul(T_stack *a, T_stack *b);
 
-
-
+#endif

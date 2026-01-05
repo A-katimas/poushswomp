@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:04:00 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 14:24:06 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:31:55 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 void rra(T_stack *a)
 {
 	up(a);
+	ft_printf("rra\n");
 }
 
 void rrb(T_stack *b)
 {
 	up(b);
+	ft_printf("rrb\n");
 }
 
 void rrr(T_stack *a,T_stack *b)
 {
 	up(a);
 	up(b);
+	ft_printf("rrr\n");
 }
 
 void	up(T_stack *stack)
@@ -33,7 +36,7 @@ void	up(T_stack *stack)
 	i = 0;
 	while(i != stack->taille)
 	{
-		swap (&stack->data[stack->taille-i],&stack->data[stack->taille-i+1]);
+		swap (&stack->data[i+1],&stack->data[i]);
 		i++;
 	}
 }

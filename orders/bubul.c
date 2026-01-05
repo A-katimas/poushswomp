@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   bubul.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 18:31:58 by jtardieu         ###   ########.fr       */
+/*   Created: 2026/01/05 17:46:34 by jtardieu          #+#    #+#             */
+/*   Updated: 2026/01/05 18:30:44 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#include "order.h"
 
-void pa(T_stack *a, T_stack *b)
+void bubul(T_stack *a, T_stack *b)
 {
-	b->taille++;
-	down(b);
-	b->data[0] = a->data[0];
-	a->data[0] = 0;
-	up(a);
-	a->taille--;
-	ft_printf("pa\n");
+	int i ;
+	i = 0;
+	while (a->taille != 0)
+	{
+		while(i < a->taille)
+		{
+				if (!(a->data[0] < a->data[1]))
+					sa(a);
+				ra(a);
+				i++;
+		}
+		pa(a,b);
+		i = 0;
+	}
 }
-
-void pb(T_stack *a, T_stack *b)
-{
-	a->taille++;
-	down(a);
-	a->data[0] = b->data[0];
-	b->data[0] = 0;
-	up(b);
-	b->taille--;
-	ft_printf("pb\n");
-}
-
-
-

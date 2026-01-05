@@ -16,8 +16,8 @@ void	sa(T_stack *a);
 void	sb(T_stack *b);
 void	ss(T_stack *a, T_stack *b);
 
-void	pb(int *tab, int *tab2);
-void	pa(int *tab, int *tab2);
+void	pb(T_stack *a, T_stack *b);
+void	pa(T_stack *a, T_stack *b);
 
 void	ra(T_stack *a);
 void	rb(T_stack *b);
