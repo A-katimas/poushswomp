@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:55 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 17:55:52 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:43:52 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,32 @@
 
 int		*resoufeur(T_stack *a, T_stack *b)
 {
-	// int i = 0;
+	int i = 0;
 	int j = 0;
 
-	// while (i != 1 )
-	// {
+	int combien = a->taille;
 
-		while (j != 6 )
+	while (i != combien )
+	{
+		while (j != combien)
 		{
-			pa(a,b);
-			visualiseur(a ,b);
+			if (a->data[i] > a->data[j])
+			{
+				swap(&a->data[i], &a->data[j]);
+				visualiseur(a,b);
+			}
 			j++;
 		}
-		j =0;
-		while (j != 3)
-		{
-			pb(a,b);
-			visualiseur(a ,b);
-			j++;
-		}
-		// i++;
-		// j=i;
 
-	return (a->data);
+		j=0;
+		i++;
+	}
+	while (a->taille != 0)
+	{
+	pb(a,b);
+		visualiseur(a,b);
+	}
+		return (a->data);
 }
 int resoula(int a)
 {

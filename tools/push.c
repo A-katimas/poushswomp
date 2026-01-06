@@ -6,13 +6,13 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 18:31:58 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:21:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-void pa(T_stack *a, T_stack *b)
+void pb(T_stack *a, T_stack *b)
 {
 	b->taille++;
 	down(b);
@@ -23,7 +23,7 @@ void pa(T_stack *a, T_stack *b)
 	ft_printf("pa\n");
 }
 
-void pb(T_stack *a, T_stack *b)
+void pa(T_stack *a, T_stack *b)
 {
 	a->taille++;
 	down(a);

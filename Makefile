@@ -29,6 +29,10 @@ $(TOOLS):
 $(ORDER):
 	make -C orders
 
+test: re
+	cc $(CFLAGS) main.c $(NAME)
+	make clean
+	./a.out
 clean:
 	rm -rf $(OBJ)
 	make -C libft clean
@@ -43,4 +47,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY :test all clean fclean re
