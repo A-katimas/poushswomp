@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 16:51:54 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 17:08:25 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:26:54 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void swap(int *a, int *b)
 }
 void	sa(T_stack *a)
 {
-	if (a->taille>1)
+	if (a->size>1)
 	{
 		swap (&a->data[0],&a->data[1]);
 		ft_printf("sa\n");
@@ -30,7 +30,7 @@ void	sa(T_stack *a)
 
 void	sb(T_stack *b)
 {
-	if (b->taille>1)
+	if (b->size>1)
 	{
 		swap (&b->data[0],&b->data[1]);
 		ft_printf("sb\n");

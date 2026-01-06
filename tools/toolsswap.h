@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/05 18:42:21 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:25:08 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct	S_stack{
 	int *data;
-	int taille;
+	int size;
 }T_stack;
 
 void	swap(int *a, int *b);

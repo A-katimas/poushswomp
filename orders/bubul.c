@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:46:34 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 17:47:11 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:25:24 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void bubul(T_stack *a, T_stack *b)
 	j = 1;
 	i = 0;
 	visualiseur(a,b);
-	while (a->taille != 0)
+	while (a->size != 0)
 	{
-		// while(i != a->taille)
+		// while(i != a->size)
 		// {
 		// 		if (!(a->data[0] < a->data[1]))
 		// 		{
@@ -45,7 +45,7 @@ void bubul(T_stack *a, T_stack *b)
 		pb(a,b);
 		visualiseur(a,b);
 	}
-	while (b->taille != 0)
+	while (b->size != 0)
 	{
 		rb(b);
 		visualiseur(a,b);

@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 17:45:53 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:13:13 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int ac , char **av)
 	(void) ac;
 	(void) av;
 	int tableau [] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
-	int *tab = ft_calloc(15,sizeof(int));
+	int *tab = ft_calloc(17,sizeof(int));
 
 	T_stack a = {tableau,17};
 	T_stack b = {tab,0};
