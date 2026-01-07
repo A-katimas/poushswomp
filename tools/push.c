@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 18:26:54 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:48:41 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,32 @@
 
 void pb(T_stack *a, T_stack *b)
 {
-	b->size++;
-	down(b);
-	b->data[0] = a->data[0];
-	a->data[0] = 0;
-	up(a);
-	a->size--;
-	ft_printf("pa\n");
+	if(!b)
+	{
+		b = lstnew(a->data);
+		lstsup(&a,a);
+	}
+	else
+	{
+		lstadd(&b,lstnew(a->data));
+		lstsup(&a,a);
+	}
+	ft_printf("pb\n");
 }
 
 void pa(T_stack *a, T_stack *b)
 {
-	a->size++;
-	down(a);
-	a->data[0] = b->data[0];
-	b->data[0] = 0;
-	up(b);
-	b->size--;
-	ft_printf("pb\n");
+	if(!a)
+	{
+		a = lstnew(b->data);
+		lstsup(&b,b);
+	}
+	else
+	{
+		lstadd(&a,lstnew(b->data));
+		lstsup(&b,b);
+	}
+	ft_printf("pa\n");
 }
 
 

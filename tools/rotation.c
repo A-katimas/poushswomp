@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:57:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 18:26:54 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:50:42 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	down(T_stack *stack)
 	{
 		if (i+1>stack->size)
 			i++;
-		swap (&stack->data[(stack->size-1)-i],&stack->data[(stack->size-1)-(i+1)]);
+		// swap (&stack->data[(stack->size-1)-i],&stack->data[(stack->size-1)-(i+1)]);
 		i++;
 	}
 }

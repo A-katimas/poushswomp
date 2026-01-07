@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 18:25:08 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:50:04 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 #include "../libft/libft.h"
 
 typedef struct	S_stack{
-	int *data;
+	int data;
 	int size;
+	struct S_stack	*next;
+	struct S_stack	*prev;
 }T_stack;
 
 void	swap(int *a, int *b);
@@ -40,7 +42,9 @@ void	rrb(T_stack *b);
 void	rrr(T_stack *a, T_stack *b);
 
 
-
+T_stack	*lstnew(int content);
+void	lstadd(T_stack **lst, T_stack *new);
+void	lstsup(T_stack **lst, T_stack *sup);
 
 //sa (swap a): Swap the first 2 elements at the top of stack a.
 //Do nothing if there is only one element or none.

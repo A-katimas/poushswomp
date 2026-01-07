@@ -6,11 +6,12 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:04:00 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 18:26:54 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:50:38 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
+
 void rra(T_stack *a)
 {
 	if (a->size>1)
@@ -44,7 +45,7 @@ void	up(T_stack *stack)
 	i = 0;
 	while(i != stack->size-1)
 	{
-		swap (&stack->data[i+1],&stack->data[i]);
+		// swap (&stack->data[i+1],&stack->data[i]);
 		i++;
 	}
 }

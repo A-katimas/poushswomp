@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:46:34 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 18:25:24 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:15:29 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void bubul(T_stack *a, T_stack *b)
 	j = 1;
 	i = 0;
 	visualiseur(a,b);
-	while (a->size != 0)
+	while (a->size != 1)
 	{
 		// while(i != a->size)
 		// {
@@ -52,14 +52,14 @@ void bubul(T_stack *a, T_stack *b)
 		pa(a,b);
 		visualiseur(a,b);
 	}
-
+ 
 		visualiseur(a,b);
 }
 
 void test(T_stack *a, T_stack *b)
 {
 	int i = 0;
-	int j = 9;
+	int j = 1;
 
 	while (i!= j)
 	{
@@ -69,75 +69,75 @@ void test(T_stack *a, T_stack *b)
 	}
 	i=0;
 
-	while (i!= j)
-	{
-		sa(a);
-		i++;
-		visualiseur(a,b);
-	}
-i=0;
-	while (i!= j)
-	{
-		sb(b);
-		i++;
-	visualiseur(a,b);
-	}
-i=0;
-	while (i!= j)
-	{
-		ss(a,b);
-		i++;
-		visualiseur(a,b);
-	}
+// 	while (i!= j)
+// 	{
+// 		sa(a);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
+// i=0;
+// 	while (i!= j)
+// 	{
+// 		sb(b);
+// 		i++;
+// 	visualiseur(a,b);
+// 	}
+// i=0;
+// 	while (i!= j)
+// 	{
+// 		ss(a,b);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
 // 	i=0;
 
-	while (i!= j)
-	{
-		rrr(a,b);
-		i++;
-		visualiseur(a,b);
-	}
-i=0;
-	while (i!= j)
-	{
-		rr(a,b);
-		i++;
-		visualiseur(a,b);
-	}
-i=0;
-	while (i!= j)
-	{
-		rra(a);
-		i++;
-		visualiseur(a,b);
-	}
-i=0;
-	while (i!= j)
-	{
-		rrb(b);
-		i++;
-		visualiseur(a,b);
-	}
-i=0;
-	while (i!= j)
+// 	while (i!= j)
+// 	{
+// 		rrr(a,b);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
+// i=0;
+// 	while (i!= j)
+// 	{
+// 		rr(a,b);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
+// i=0;
+// 	while (i!= j)
+// 	{
+// 		rra(a);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
+// i=0;
+// 	while (i!= j)
+// 	{
+// 		rrb(b);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
+// i=0;
+	while (i!= j+16)
 	{
 		ra(a);
 		i++;
 		visualiseur(a,b);
 	}
-i=0;
-	while (i!= j)
-	{
-		rb(b);
-		i++;
-		visualiseur(a,b);
-	}
-i=0;
-	while (i!= j)
-	{
-		pa(a,b);
-		i++;
-		visualiseur(a,b);
-	}
-i=0;
+// i=0;
+// 	while (i!= j)
+// 	{
+// 		rb(b);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
+// i=0;
+// 	while (i!= j)
+// 	{
+// 		pa(a,b);
+// 		i++;
+// 		visualiseur(a,b);
+// 	}
+// i=0;
 }

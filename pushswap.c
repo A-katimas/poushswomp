@@ -6,39 +6,44 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 18:26:07 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 18:10:14 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	push(int *tab)
-{
-	int i = 0;
-	while (i++ != 14)
-	{
-		ft_printf("%d,",tab[i]);
-		i++;
-	}
-}
 
-int		ft_pushswap(T_stack *a, T_stack *b)
-{
-	resoufeur(a,b);
-	push(a->data);
-	return (a->size);
-}
 
 void	visualiseur(T_stack *a, T_stack *b)
 {
-	int i = 0;
+	// int i = 0;
 	system("clear");
 	ft_printf("\ttab1\t\t\t||\ttab2\n");
-	while (i != 18)
-	{
-		ft_printf("%i\t%d\t\t\t||\t%d\n",i,a->data[i],b->data[i]);
-		i++;
-	}
+	// while (a->data[i] != 0)
+	// {
+	// 	ft_printf("%i\t%d\t\t\t||\t%d\n",i,a->data[i],b->data[i]);
+	// 	i++;
+	// }
 	ft_printf("size a %d\t\t\t||size b\t%d\n",a->size,b->size);
-	usleep(100000);
+
+	usleep(500000);
+}
+
+void	printStack(T_stack **stack)
+{
+	T_stack *temp = *stack;
+
+	ft_printf("\n\n\n");
+	if (!(*stack)||!stack)
+		return((void)ft_printf( "pu rien"));
+	if (temp->next == *stack)
+		return ((void)ft_printf("%d\n", temp->data));
+	while (temp->next != *stack)
+	{
+		ft_printf("%d\n", temp->data);
+		temp = temp->next;
+		if (temp->next == *stack)
+			ft_printf("%d\n", temp->data);
+	}
+
 }

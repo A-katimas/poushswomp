@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 14:41:51 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 16:39:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@
 # include "tools/toolsswap.h"
 # include "orders/order.h"
 
-int		*resoufeur(T_stack *a, T_stack*b);
+// int		*resoufeur(T_stack *a, T_stack*b);
 int		resoula(int a);
 int		resouchien(int a);
-void	push(int *tab);
-int		ft_pushswap(T_stack *a, T_stack *b);
-
 
 void	visualiseur(T_stack *a, T_stack *b);
-
+void	printStack(T_stack **stack);
 #endif

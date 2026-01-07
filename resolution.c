@@ -6,41 +6,41 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:55 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 18:26:54 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:53:08 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int		*resoufeur(T_stack *a, T_stack *b)
-{
-	int i = 0;
-	int j = 0;
+// int		*resoufeur(T_stack *a, T_stack *b)
+// {
+	// int i = 0;
+	// int j = 0;
 
-	int combien = a->size;
+	// int combien = a->size;
 
-	while (i != combien )
-	{
-		while (j != combien)
-		{
-			if (a->data[i] > a->data[j])
-			{
-				swap(&a->data[i], &a->data[j]);
-				visualiseur(a,b);
-			}
-			j++;
-		}
+	// while (i != combien )
+	// {
+	// 	while (j != combien)
+	// 	{
+	// 		if (a->data[i] > a->data[j])
+	// 		{
+	// 			swap(&a->data[i], &a->data[j]);
+	// 			visualiseur(a,b);
+	// 		}
+	// 		j++;
+	// 	}
 
-		j=0;
-		i++;
-	}
-	while (a->size != 0)
-	{
-	pb(a,b);
-		visualiseur(a,b);
-	}
-		return (a->data);
-}
+	// 	j=0;
+	// 	i++;
+	// }
+	// while (a->size != 0)
+	// {
+	// pb(a,b);
+	// 	visualiseur(a,b);
+	// }
+		// return (a->data);
+// }
 int resoula(int a)
 {
 	ft_printf("resolution 2%d",a);

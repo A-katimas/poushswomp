@@ -6,6 +6,7 @@ SOURCE =	swap.c \
 			push.c \
 			rotation.c \
 			reverserota.c \
+			ft_use.c \
 
 OBJ = $(SOURCE:.c=.o)
 
