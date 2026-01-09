@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/07 15:50:04 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/09 07:23:35 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,29 @@ typedef struct	S_stack{
 }T_stack;
 
 void	swap(int *a, int *b);
-void	up(T_stack *stack);
-void	down(T_stack *stack);
+void	up(T_stack **stack);
+void	down(T_stack **stack);
 
-void	sa(T_stack *a);
-void	sb(T_stack *b);
-void	ss(T_stack *a, T_stack *b);
+void	sa(T_stack **a);
+void	sb(T_stack **b);
+void	ss(T_stack **a, T_stack **b);
 
-void	pb(T_stack *a, T_stack *b);
-void	pa(T_stack *a, T_stack *b);
+void	pb(T_stack **a, T_stack **b);
+void	pa(T_stack **a, T_stack **b);
 
-void	ra(T_stack *a);
-void	rb(T_stack *b);
-void	rr(T_stack *a, T_stack *b);
+void	ra(T_stack **a);
+void	rb(T_stack **b);
+void	rr(T_stack **a, T_stack **b);
 
-void	rra(T_stack *a);
-void	rrb(T_stack *b);
-void	rrr(T_stack *a, T_stack *b);
+void	rra(T_stack **a);
+void	rrb(T_stack **b);
+void	rrr(T_stack **a, T_stack **b);
 
 
 T_stack	*lstnew(int content);
 void	lstadd(T_stack **lst, T_stack *new);
 void	lstsup(T_stack **lst, T_stack *sup);
+int 	lenlist(T_stack **stack);
 
 //sa (swap a): Swap the first 2 elements at the top of stack a.
 //Do nothing if there is only one element or none.

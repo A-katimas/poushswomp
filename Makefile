@@ -1,6 +1,7 @@
 NAME = pushswap.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
+#-fsanitize=address
 
 LIBFT = libft/libft.a
 TOOLS = tools/tools.a
@@ -30,9 +31,9 @@ $(ORDER):
 	make -C orders
 
 test: re
-	cc $(CFLAGS) main.c $(NAME)
+	cc $(CFLAGS) main.c $(NAME) -o push_swap
 	make clean
-	./a.out
+	./push_swap 35 654 23 72 1 3 367 786  32 5 4864  321 56 78 -87465
 clean:
 	rm -rf $(OBJ)
 	make -C libft clean

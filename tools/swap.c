@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 16:51:54 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/07 15:50:26 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/09 07:10:42 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@ void swap(int *a, int *b)
 	*a = *b;
 	*b = i ;
 }
-void	sa(T_stack *a)
+void	sa(T_stack **a)
 {
-	if (a->size>1)
+	if (lenlist(a)>1)
 	{
-		// swap (&a->data[0],&a->data[1]);
+		swap (&(*a)->data,&(*a)->next->data);
 		ft_printf("sa\n");
 	}
 }
 
-void	sb(T_stack *b)
+void	sb(T_stack **b)
 {
-	if (b->size>1)
+	if (lenlist(b)>1)
 	{
-		// swap (&b->data[0],&b->data[1]);
-		ft_printf("sb\n");
+		swap (&(*b)->data,&(*b)->next->data);
+			ft_printf("sb\n");
 	}
 }
 
 
-void	ss(T_stack *a, T_stack *b)
+void	ss(T_stack **a, T_stack **b)
 {
 	sa(a);
 	sb(b);

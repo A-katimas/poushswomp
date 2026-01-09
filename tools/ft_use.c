@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:12:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/07 18:21:29 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/09 10:42:40 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void lstsup(T_stack **lst, T_stack *sup)
 		return;
 	if (sup == sup->next)
 	{
-		*lst = NULL;ft_printf("ici");
+		*lst = NULL;
 		return free(sup);
 	}
 	if (sup->prev == sup->next)
@@ -64,4 +64,23 @@ void lstsup(T_stack **lst, T_stack *sup)
 	if (*lst == sup )
 		*lst = temp;
 	free(sup);
+}
+
+
+int lenlist(T_stack **stack)
+{
+
+	if (!stack || *stack == NULL)
+		return(0);
+	T_stack *temp = *stack;
+	int i = 0 ;
+	if (temp->next==*stack)
+		return(1);
+	i++;
+	while (temp->next != *stack)
+		{
+			temp = temp->next;
+			i++;
+		}
+	return i;
 }

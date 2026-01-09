@@ -6,40 +6,44 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/07 15:48:41 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/09 10:42:16 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-void pb(T_stack *a, T_stack *b)
+void pb(T_stack **a, T_stack **b)
 {
-	if(!b)
+	
+	if(*b==NULL)
 	{
-		b = lstnew(a->data);
-		lstsup(&a,a);
+		*b = lstnew((*a)->data);
+		lstsup(a,*a);
 	}
 	else
 	{
-		lstadd(&b,lstnew(a->data));
-		lstsup(&a,a);
+		lstadd(b,lstnew((*a)->data));
+		lstsup(a,*a);
 	}
+	down(b);
 	ft_printf("pb\n");
 }
 
-void pa(T_stack *a, T_stack *b)
+void pa(T_stack **a, T_stack **b)
 {
-	if(!a)
+	if(*a==NULL)
 	{
-		a = lstnew(b->data);
-		lstsup(&b,b);
+		*a = lstnew((*b)->data);
+		lstsup(b,*b);
 	}
 	else
 	{
-		lstadd(&a,lstnew(b->data));
-		lstsup(&b,b);
+		lstadd(a,lstnew((*b)->data));
+		lstsup(b,*b);
 	}
+	down(a);
 	ft_printf("pa\n");
+
 }
 
 

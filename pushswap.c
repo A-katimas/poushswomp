@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/07 18:10:14 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/09 10:39:27 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,51 @@
 
 
 
-void	visualiseur(T_stack *a, T_stack *b)
+void	visualiseur(T_stack **a, T_stack **b)
 {
-	// int i = 0;
-	system("clear");
-	ft_printf("\ttab1\t\t\t||\ttab2\n");
-	// while (a->data[i] != 0)
-	// {
-	// 	ft_printf("%i\t%d\t\t\t||\t%d\n",i,a->data[i],b->data[i]);
-	// 	i++;
-	// }
-	ft_printf("size a %d\t\t\t||size b\t%d\n",a->size,b->size);
+	int i = 0;
+	int sup = 0;
+	T_stack *tempa = *a;
+	T_stack *tempb;
+	if (*b == NULL)
+	{
+		tempb = lstnew(0);
+		sup ++;
+	}
+	else
+		tempb = *b;
 
-	usleep(500000);
+	if (*a == NULL)
+	{
+		tempa = lstnew(0);
+		sup ++;
+	}
+	else
+		tempa = *a;
+system("clear");
+
+	ft_printf("\ttab1\t\t\t||\ttab2\n");
+	while (i <= lenlist(a) || i <= lenlist(b))
+	{
+		ft_printf("%d\t",i);
+		if (i <lenlist(a))
+			ft_printf("%d",tempa->data);
+		ft_printf("\t\t\t||\t");
+		if (i <lenlist(b))
+			ft_printf("%d",tempb->data);
+		ft_printf("\n");
+
+		i++;
+		tempa=tempa->next;
+		tempb=tempb->next;
+	}
+
+	if (sup != 0)
+		lstsup(&tempb,tempb);
+	ft_printf("taille a %d taille b %d\n\n",lenlist(a),lenlist(b));
+
+	usleep(100000);
+
 }
 
 void	printStack(T_stack **stack)
@@ -36,8 +68,10 @@ void	printStack(T_stack **stack)
 	ft_printf("\n\n\n");
 	if (!(*stack)||!stack)
 		return((void)ft_printf( "pu rien"));
+
 	if (temp->next == *stack)
 		return ((void)ft_printf("%d\n", temp->data));
+
 	while (temp->next != *stack)
 	{
 		ft_printf("%d\n", temp->data);
@@ -47,3 +81,4 @@ void	printStack(T_stack **stack)
 	}
 
 }
+

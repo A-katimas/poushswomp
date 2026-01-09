@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:45:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/06 14:08:33 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/09 10:22:35 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../tools/toolsswap.h"
 
-	void bubul(T_stack *a, T_stack *b);
-	void test(T_stack *a, T_stack *b);
+	void bubul(T_stack **a, T_stack **b);
+	void test(T_stack **a, T_stack **b);
 
 #endif
