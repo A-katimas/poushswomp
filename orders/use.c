@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverserota.c                                      :+:      :+:    :+:   */
+/*   use.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 11:04:00 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/12 16:02:01 by jtardieu         ###   ########.fr       */
+/*   Created: 2026/01/12 19:58:29 by jtardieu          #+#    #+#             */
+/*   Updated: 2026/01/12 19:58:30 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#include "order.h"
 
-void ra(T_stack **a)
+
+int findMaxA(T_stack **a)
 {
-	if (lenlist(a)>1)
+	int grand = (*a)->data;
+	T_stack	*index =(*a)->next;
+	while (index != (*a))
 	{
-		up(a);
-		ft_printf("ra\n");
+		if (grand < index->data)
+			grand = index->data;
+		index = index->next;
+
 	}
+
+	return grand;
 }
 
-void rb(T_stack **b)
+int findMinA(T_stack **a)
 {
-	if (lenlist(b)>1)
+	int grand = (*a)->data;
+	T_stack	*index =(*a)->next;
+	while (index != (*a))
 	{
-		up(b);
-		ft_printf("rb\n");
+		if (grand > index->data)
+			grand = index->data;
+		index = index->next;
+
 	}
-}
-
-void rr(T_stack **a,T_stack **b)
-{
-	if (lenlist(a)>1)
-		up(a);
-	if (lenlist(b)>1)
-		up(b);
-	ft_printf("rr\n");
-}
-
-void	up(T_stack **stack)
-{
-	*stack = (*stack)->next;
+	return grand;
 }

@@ -3,39 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   rotation.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:57:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/09 10:42:27 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:02:09 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-void	ra(T_stack **a)
+void	rra(T_stack **a)
 {
 	if (lenlist(a)>1)
 	{
 		down(a);
-		ft_printf("ra\n");
+		ft_printf("rra\n");
 	}
 }
 
-void	rb(T_stack **b)
+void	rrb(T_stack **b)
 {
 	if (lenlist(b)>1)
 	{
 		down(b);
-		ft_printf("rb\n");
+		ft_printf("rrb\n");
 	}
 }
-void	rr(T_stack **a, T_stack **b)
+void	rrr(T_stack **a, T_stack **b)
 {
 	if (lenlist(a)>1)
 		down(a);
 	if (lenlist(b)>1)
 		down(b);
-	ft_printf("rr\n");
+	ft_printf("rrr\n");
 }
 void	down(T_stack **stack)
 {

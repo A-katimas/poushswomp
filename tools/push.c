@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/09 10:42:16 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/12 17:50:15 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void pb(T_stack **a, T_stack **b)
 {
-	
 	if(*b==NULL)
 	{
 		*b = lstnew((*a)->data);

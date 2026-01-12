@@ -3,41 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   bubul.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:46:34 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/09 12:02:11 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/12 17:39:16 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
-#include "../pushswap.h"
-int findMaxA(T_stack **a);
+
 void pushMaxA(T_stack **a,T_stack **b)
 {
 	T_stack *top = *a ;
-	int i = findMaxA(a);
-	ft_printf("%d\n",i);
-	while (top->data != i)
+	int i;
+	while(lenlist(a)!=0)
 	{
-		rra(a);
+		i = findMinA(a);
+		ft_printf("%d\n",i);
+		while (top->data != i)
+		{
+			rra(a);
+			visualiseur(a,b);
+			down(&top);
+		}
+		pb(a,b);
+		visualiseur(a,b);
 	}
-	pb(a,b);
+	while(lenlist(b)!=0)
+	{
+		pa(a,b);
+		visualiseur(a,b);
+	}
 }
 
-int findMaxA(T_stack **a)
-{
-	int grand = (*a)->data;
-	T_stack	*index =(*a)->next;
-	while (index != (*a))
-	{
-		if (grand < index->data)
-			grand = index->data;
-		index = index->next;
-	}
 
-	return grand;
-}
+
 
 void bubul(T_stack **a, T_stack **b)
 {
@@ -47,7 +47,7 @@ void bubul(T_stack **a, T_stack **b)
 
 	// j = 1;
 	// i = 0;
-	// // visualiseur(a,b);
+	////  visualiseur(a,b);
 	// while (lenlist(a) != 1)
 	// {
 	// 	while(i != lenlist(a))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   toolsswap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/09 07:23:35 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:52:42 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ T_stack	*lstnew(int content);
 void	lstadd(T_stack **lst, T_stack *new);
 void	lstsup(T_stack **lst, T_stack *sup);
 int 	lenlist(T_stack **stack);
+
 
 //sa (swap a): Swap the first 2 elements at the top of stack a.
 //Do nothing if there is only one element or none.

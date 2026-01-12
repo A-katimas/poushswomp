@@ -33,7 +33,7 @@ $(ORDER):
 test: re
 	cc $(CFLAGS) main.c $(NAME) -o push_swap
 	make clean
-	./push_swap 35 654 23 72 1 3 367 786  32 5 4864  321 56 78 -87465
+	./push_swap 35 654 23 72 1 3 367 786  32 5 4864  321 56 78 465
 clean:
 	rm -rf $(OBJ)
 	make -C libft clean

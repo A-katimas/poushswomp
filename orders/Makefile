@@ -3,6 +3,8 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
 
 SOURCE =	bubul.c \
+			use.c \
+			doublette.c \
 
 OBJ = $(SOURCE:.c=.o)
 
