@@ -20,7 +20,7 @@ $(NAME): $(LIBFT) $(TOOLS) $(ORDER) $(OBJ)
 	ar x $(ORDER)
 	ar -rcs $@ $(OBJ) *.o
 	rm -f *.o
-
+	cc $(CFLAGS) main.c $(NAME) -o push_swap
 $(LIBFT):
 	make -C libft
 

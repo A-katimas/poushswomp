@@ -3,84 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   bubul.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:46:34 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/12 17:39:16 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:32:15 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
 
-void pushMaxA(T_stack **a,T_stack **b)
+void bubul(T_stack **a, T_stack **b)
 {
-	T_stack *top = *a ;
-	int i;
-	while(lenlist(a)!=0)
+	int i ;
+	int j;
+
+	j = 1;
+	i = 0;
+	 visualiseur(a,b);
+	while (lenlist(a) != 1)
 	{
-		i = findMinA(a);
-		ft_printf("%d\n",i);
-		while (top->data != i)
+		while(i != lenlist(a))
 		{
-			rra(a);
-			visualiseur(a,b);
-			down(&top);
+				if (!((*a)->data < (*a)->next->data))
+				{
+					sa(a);
+					visualiseur(a,b);
+					j=0;
+				}
+				else
+				{
+					rra(a);
+					visualiseur(a,b);
+					j++;
+				}
+				i++;
 		}
+		i = 0;
+		if (j==0)
+			rra(a);
 		pb(a,b);
 		visualiseur(a,b);
 	}
-	while(lenlist(b)!=0)
+	while (lenlist(b)!= 0)
 	{
+		rb(b);
+		visualiseur(a,b);
 		pa(a,b);
 		visualiseur(a,b);
 	}
-}
-
-
-
-
-void bubul(T_stack **a, T_stack **b)
-{
-	pushMaxA(a,b);
-	// int i ;
-	// int j;
-
-	// j = 1;
-	// i = 0;
-	////  visualiseur(a,b);
-	// while (lenlist(a) != 1)
-	// {
-	// 	while(i != lenlist(a))
-	// 	{
-	// 			if (!((*a)->data < (*a)->next->data))
-	// 			{
-	// 				sa(a);
-	// 				// visualiseur(a,b);
-	// 				j=0;
-	// 			}
-	// 			else
-	// 			{
-	// 				rra(a);
-	// 				// visualiseur(a,b);
-	// 				j++;
-	// 			}
-	// 			i++;
-	// 	}
-	// 	i = 0;
-	// 	if (j==0)
-	// 		rra(a);
-	// 	pb(a,b);
-	// 	// visualiseur(a,b);
-	// }
-	// while (lenlist(b)!= 0)
-	// {
-	// 	rb(b);
-	// 	// visualiseur(a,b);
-	// 	pa(a,b);
-	// 	// visualiseur(a,b);
-	// }
-	// ra(a);
-	// 	// visualiseur(a,b);
+	ra(a);
+	visualiseur(a,b);
 }
 
 void test(T_stack **a, T_stack **b)

@@ -5,6 +5,7 @@ CFLAGS = -Wall -Werror -Wextra -g3
 SOURCE =	bubul.c \
 			use.c \
 			doublette.c \
+			chosetri.c \
 
 OBJ = $(SOURCE:.c=.o)
 
