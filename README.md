@@ -1,7 +1,7 @@
 # 
 c'est un pusswap en effet
 # pushswap
-*This project has been created as part of the 42 curriculum by <Jtardieu>*
+*This project has been created as part of the 42 curriculum by Jtardieu*
 
 
 ![hallo](https://media1.tenor.com/m/xMOszk1UNMgAAAAC/toothless-nom.gif)
@@ -45,6 +45,7 @@ If the project has not been compiled yet or if the ``pushswap`` executable does 
 
 
 *typical type:*
+
 ``
 make test
 ``
