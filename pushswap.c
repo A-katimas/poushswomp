@@ -6,13 +6,12 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/13 15:48:48 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/13 19:09:47 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-
+#include <stdio.h>
 
 void	visualiseur(T_stack **a, T_stack **b)
 {
@@ -35,8 +34,8 @@ void	visualiseur(T_stack **a, T_stack **b)
 	}
 	else
 		tempa = *a;
-system("clear");
-
+	
+	printf("\033[2J\033[H");
 	ft_printf("\ttab1\t\t\t||\ttab2\n");
 	while (i <= lenlist(a) || i <= lenlist(b))
 	{
@@ -47,18 +46,19 @@ system("clear");
 		if (i <lenlist(b))
 			ft_printf("%d",tempb->data);
 		ft_printf("\n");
-
+		
 		i++;
 		tempa=tempa->next;
 		tempb=tempb->next;
 	}
-
+	
 	if (sup != 0)
-		lstsup(&tempb,tempb);
+	lstsup(&tempb,tempb);
 	ft_printf("taille a %d taille b %d\n\n",lenlist(a),lenlist(b));
+	ft_printf("\n\n\n\n");
 
 	usleep(100000);
-
+	
 }
 
 void	printStack(T_stack **stack)
@@ -81,4 +81,3 @@ void	printStack(T_stack **stack)
 	}
 
 }
-

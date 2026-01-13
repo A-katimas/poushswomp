@@ -6,14 +6,13 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/13 17:18:16 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:32:11 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 #include <stdio.h>
 
-float compute_disorder(T_stack **stack);
 int adaptative(T_stack **stack);
 int commande(char *what);
 
@@ -70,12 +69,10 @@ int commande(char *what)
 {
 	if (!ft_strncmp(what,"simple",6))
 		return 1;
-	if (!ft_strncmp(what,"chose",6))
+	if (!ft_strncmp(what,"complex",6))
 		return 2;
-
 	else
 		return 0;
-
 }
 
 int adaptative(T_stack **stack)

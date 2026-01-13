@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   chosetri.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/13 17:26:32 by jtardieu          #+#    #+#             */
+/*   Updated: 2026/01/13 18:28:50 by jtardieu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "order.h"
 
 void pushMaxA(T_stack **a,T_stack **b)
@@ -7,7 +19,6 @@ void pushMaxA(T_stack **a,T_stack **b)
 	while(lenlist(a)!=0)
 	{
 		i = findMinA(a);
-		ft_printf("%d\n",i);
 		while (top->data != i)
 		{
 			rra(a);
