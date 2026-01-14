@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/13 19:09:47 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:45:06 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	visualiseur(T_stack **a, T_stack **b)
 	else
 		tempa = *a;
 	
-	printf("\033[2J\033[H");
+	// printf("\033[2J\033[H");
+	system("clear");
 	ft_printf("\ttab1\t\t\t||\ttab2\n");
 	while (i <= lenlist(a) || i <= lenlist(b))
 	{
