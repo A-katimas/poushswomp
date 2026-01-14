@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/12 17:50:15 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-void pb(T_stack **a, T_stack **b)
+void	pb(t_stack **a, t_stack **b)
 {
-	if(*b==NULL)
+	if (*b == NULL)
 	{
 		*b = lstnew((*a)->data);
 		lstsup(a,*a);
 	}
 	else
 	{
-		lstadd(b,lstnew((*a)->data));
+		lstadd(b, lstnew((*a)->data));
 		lstsup(a,*a);
 	}
 	down(b);
 	ft_printf("pb\n");
 }
 
-void pa(T_stack **a, T_stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
-	if(*a==NULL)
+	if (*a == NULL)
 	{
 		*a = lstnew((*b)->data);
 		lstsup(b,*b);
@@ -42,8 +42,4 @@ void pa(T_stack **a, T_stack **b)
 	}
 	down(a);
 	ft_printf("pa\n");
-
 }
-
-
-

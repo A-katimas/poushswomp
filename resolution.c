@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   resolution.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:55 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/07 15:53:08 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-// int		*resoufeur(T_stack *a, T_stack *b)
+// int		*resoufeur(t_stack *a, t_stack *b)
 // {
 	// int i = 0;
 	// int j = 0;

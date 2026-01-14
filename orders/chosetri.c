@@ -3,34 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   chosetri.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:26:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/13 18:28:50 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 14:05:23 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
 
-void pushMaxA(T_stack **a,T_stack **b)
+void	pushmaxa(t_stack **a, t_stack **b)
 {
-	T_stack *top = *a ;
-	int i;
-	while(lenlist(a)!=0)
+	t_stack	*top;
+	int		i;
+
+	top = *a ;
+	while (lenlist(a) != 0)
 	{
 		i = findMinA(a);
 		while (top->data != i)
 		{
 			rra(a);
-			visualiseur(a,b);
+			// visualiseur(a,b);
 			down(&top);
 		}
-		pb(a,b);
-		visualiseur(a,b);
+		pb(a, b);
+		// visualiseur(a,b);
 	}
-	while(lenlist(b)!=0)
+	while (lenlist(b) != 0)
 	{
-		pa(a,b);
-		visualiseur(a,b);
+		pa(a, b);
+		// visualiseur(a,b);
 	}
 }

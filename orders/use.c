@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   use.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:58:29 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/12 19:58:30 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
 
 
-int findMaxA(T_stack **a)
+int findMaxA(t_stack **a)
 {
 	int grand = (*a)->data;
-	T_stack	*index =(*a)->next;
+	t_stack	*index =(*a)->next;
 	while (index != (*a))
 	{
 		if (grand < index->data)
@@ -28,10 +28,10 @@ int findMaxA(T_stack **a)
 	return grand;
 }
 
-int findMinA(T_stack **a)
+int findMinA(t_stack **a)
 {
 	int grand = (*a)->data;
-	T_stack	*index =(*a)->next;
+	t_stack	*index =(*a)->next;
 	while (index != (*a))
 	{
 		if (grand > index->data)

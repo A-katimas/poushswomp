@@ -6,19 +6,19 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 12:45:06 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 #include <stdio.h>
 
-void	visualiseur(T_stack **a, T_stack **b)
+void	visualiseur(t_stack **a, t_stack **b)
 {
 	int i = 0;
 	int sup = 0;
-	T_stack *tempa = *a;
-	T_stack *tempb;
+	t_stack *tempa = *a;
+	t_stack *tempb;
 	if (*b == NULL)
 	{
 		tempb = lstnew(0);
@@ -62,9 +62,9 @@ void	visualiseur(T_stack **a, T_stack **b)
 	
 }
 
-void	printStack(T_stack **stack)
+void	printStack(t_stack **stack)
 {
-	T_stack *temp = *stack;
+	t_stack *temp = *stack;
 
 	ft_printf("\n\n\n");
 	if (!(*stack)||!stack)

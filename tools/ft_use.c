@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_use.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:12:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/09 10:42:40 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-T_stack	*lstnew(int content)
+t_stack	*lstnew(int content)
 {
-	T_stack	*newlist;
+	t_stack	*newlist;
 
-	newlist = ft_calloc(1, sizeof(T_stack));
+	newlist = ft_calloc(1, sizeof(t_stack));
 	if (newlist == NULL)
 		return (NULL);
 	newlist->data = content;
@@ -24,63 +24,64 @@ T_stack	*lstnew(int content)
 	newlist->prev = newlist;
 	return (newlist);
 }
-void	lstadd(T_stack **lst, T_stack *new)
+
+void	lstadd(t_stack **lst, t_stack *new)
 {
+	t_stack	*temp;
+
 	if (!lst || !new)
 		return ;
-
-	T_stack *temp = (*lst)->prev;
-
+	temp = (*lst)->prev;
 	temp->next = new;
 	(*lst)->prev = new;
-	new->prev=temp;
-	new->next=*lst;
-
+	new->prev = temp;
+	new->next = *lst;
 }
 
-void lstsup(T_stack **lst, T_stack *sup)
+void	lstsup(t_stack **lst, t_stack *sup)
 {
-	T_stack *temp;
-	T_stack *point;
+	t_stack	*temp;
+	t_stack	*point;
 
 	temp = sup->next;
 	point = sup->prev;
 	if (!lst || *lst == NULL )
-		return;
+		return ;
 	if (sup == sup->next)
 	{
 		*lst = NULL;
-		return free(sup);
+		return (free(sup));
 	}
 	if (sup->prev == sup->next)
 	{
 		*lst = temp;
 		(*lst)->next = *lst ;
 		(*lst)->prev = *lst ;
-		return(free(sup));
+		return (free(sup));
 	}
 	temp->prev = point;
 	point->next = temp;
-	if (*lst == sup )
+	if (*lst == sup)
 		*lst = temp;
 	free(sup);
 }
 
-
-int lenlist(T_stack **stack)
+int	lenlist(t_stack **stack)
 {
+	int		i;
+	t_stack	*temp;
 
 	if (!stack || *stack == NULL)
-		return(0);
-	T_stack *temp = *stack;
-	int i = 0 ;
-	if (temp->next==*stack)
-		return(1);
+		return (0);
+	temp = *stack;
+	i = 0 ;
+	if (temp->next == *stack)
+		return (1);
 	i++;
 	while (temp->next != *stack)
-		{
-			temp = temp->next;
-			i++;
-		}
-	return i;
+	{
+		temp = temp->next;
+		i++;
+	}
+	return (i);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bubul.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:46:34 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/13 15:32:15 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
 
-void bubul(T_stack **a, T_stack **b)
+void bubul(t_stack **a, t_stack **b)
 {
 	int i ;
 	int j;
@@ -55,7 +55,7 @@ void bubul(T_stack **a, T_stack **b)
 	visualiseur(a,b);
 }
 
-void test(T_stack **a, T_stack **b)
+void test(t_stack **a, t_stack **b)
 {
 	int i = 0;
 	int j = 5;

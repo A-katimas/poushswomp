@@ -3,43 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   reverserota.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:04:00 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/12 16:02:01 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-void ra(T_stack **a)
+void	ra(t_stack **a)
 {
-	if (lenlist(a)>1)
+	if (lenlist(a) > 1)
 	{
 		up(a);
 		ft_printf("ra\n");
 	}
 }
 
-void rb(T_stack **b)
+void	rb(t_stack **b)
 {
-	if (lenlist(b)>1)
+	if (lenlist(b) > 1)
 	{
 		up(b);
 		ft_printf("rb\n");
 	}
 }
 
-void rr(T_stack **a,T_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
-	if (lenlist(a)>1)
+	if (lenlist(a) > 1)
 		up(a);
-	if (lenlist(b)>1)
+	if (lenlist(b) > 1)
 		up(b);
 	ft_printf("rr\n");
 }
 
-void	up(T_stack **stack)
+void	up(t_stack **stack)
 {
 	*stack = (*stack)->next;
 }
