@@ -9,7 +9,6 @@ ORDER = orders/order.a
 
 SOURCE =	pushswap.c \
 			resolution.c \
-			utils.c \
 
 OBJ = $(SOURCE:.c=.o)
 

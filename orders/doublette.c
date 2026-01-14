@@ -6,19 +6,18 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:59:19 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/14 16:59:06 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
 
-
-void doublette(t_stack **a,t_stack **b)
+void chunk_sort(t_stack **a, t_stack **b)
 {
 	int j = lenlist(a)/2 ;
-	// t_stack *spirituela = lstnew((*a)->data);
-	// t_stack *top = *a;
-	// t_stack *trier = *a;
+	// T_stack *spirituela = lstnew((*a)->data);
+	// T_stack *top = *a;
+	// T_stack *trier = *a;
 	int i = j;
 	while (lenlist(a) != i )
 	{
@@ -47,5 +46,3 @@ void doublette(t_stack **a,t_stack **b)
 	//{
 	//}
 }
-
-

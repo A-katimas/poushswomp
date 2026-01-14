@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/14 16:25:36 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "tools/toolsswap.h"
 # include "orders/order.h"
 
+typedef struct S_stack	t_stack;
 // int		*resoufeur(t_stack *a, t_stack*b);
 int		resoula(int a);
 int		resouchien(int a);

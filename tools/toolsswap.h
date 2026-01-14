@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 13:56:52 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/14 16:52:38 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 # define TOOLSSWAP_H
 
 # include "../libft/libft.h"
+# include "../pushswap.h"
+# include "../orders/order.h"
 
 typedef struct S_stack
 {
 	int				data;
-	int				size;
 	struct S_stack	*next;
 	struct S_stack	*prev;
+	int				index;
 }	t_stack;
 
 void	swap(int *a, int *b);

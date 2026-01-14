@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:26:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 14:05:23 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/14 16:05:57 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ void	pushmaxa(t_stack **a, t_stack **b)
 	top = *a ;
 	while (lenlist(a) != 0)
 	{
-		i = findMinA(a);
+		i = findmina(a);
 		while (top->data != i)
 		{
 			rra(a);
-			// visualiseur(a,b);
+			visualiseur(a, b);
 			down(&top);
 		}
 		pb(a, b);
-		// visualiseur(a,b);
+		visualiseur(a, b);
 	}
 	while (lenlist(b) != 0)
 	{
 		pa(a, b);
-		// visualiseur(a,b);
+		visualiseur(a, b);
 	}
 }
