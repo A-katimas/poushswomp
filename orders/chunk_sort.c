@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:59:19 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 17:53:27 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/14 18:14:34 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,29 @@ void	sort_array(int *arr, int size)
 		i++;
 	}
 }
+
+void	assign_index(t_stack *a, int *sorted, int size)
+{
+	t_stack	*tmp;
+	int		i;
+
+	tmp = a;
+	while (tmp)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (tmp->data == sorted[i])
+			{
+				tmp->index = i;
+				break ;
+			}
+			i++;
+		}
+		tmp = tmp->next;
+	}
+}
+
 
 void 	chunk_sort(t_stack **a, t_stack **b)
 {
