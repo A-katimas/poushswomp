@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/14 17:12:40 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 void	visualiseur(t_stack **a, t_stack **b)
 {
-	int i = 0;
-	int sup = 0;
-	t_stack *tempa = *a;
-	t_stack *tempb;
+	int		i;
+	int		sup;
+	t_stack	*tempa;
+	t_stack	*tempb;
+
+	tempa = *a;
+	i = 0;
 	if (*b == NULL)
 	{
 		tempb = lstnew(0);
@@ -26,7 +29,6 @@ void	visualiseur(t_stack **a, t_stack **b)
 	}
 	else
 		tempb = *b;
-
 	if (*a == NULL)
 	{
 		tempa = lstnew(0);
@@ -34,7 +36,6 @@ void	visualiseur(t_stack **a, t_stack **b)
 	}
 	else
 		tempa = *a;
-	
 	// printf("\033[2J\033[H");
 	system("clear");
 	ft_printf("\ttab1\t\t\t||\ttab2\n");
@@ -42,37 +43,31 @@ void	visualiseur(t_stack **a, t_stack **b)
 	{
 		ft_printf("%d\t",i);
 		if (i <lenlist(a))
-			ft_printf("%d",tempa->data);
+			ft_printf("%d", tempa->data);
 		ft_printf("\t\t\t||\t");
 		if (i <lenlist(b))
-			ft_printf("%d",tempb->data);
+			ft_printf("%d", tempb->data);
 		ft_printf("\n");
-		
 		i++;
-		tempa=tempa->next;
-		tempb=tempb->next;
+		tempa = tempa->next;
+		tempb = tempb->next;
 	}
-	
 	if (sup != 0)
-	lstsup(&tempb,tempb);
+		lstsup(&tempb, tempb);
 	ft_printf("taille a %d taille b %d\n\n",lenlist(a),lenlist(b));
 	ft_printf("\n\n\n\n");
-
 	usleep(100000);
-	
 }
 
 void	printStack(t_stack **stack)
 {
-	t_stack *temp = *stack;
+	t_stack	*temp = *stack;
 
 	ft_printf("\n\n\n");
-	if (!(*stack)||!stack)
-		return((void)ft_printf( "pu rien"));
-
+	if (!(*stack) || !stack)
+		return ((void) ft_printf("pu rien"));
 	if (temp->next == *stack)
 		return ((void)ft_printf("%d\n", temp->data));
-
 	while (temp->next != *stack)
 	{
 		ft_printf("%d\n", temp->data);
@@ -80,5 +75,4 @@ void	printStack(t_stack **stack)
 		if (temp->next == *stack)
 			ft_printf("%d\n", temp->data);
 	}
-
 }
