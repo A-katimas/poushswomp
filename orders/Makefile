@@ -4,7 +4,7 @@ CFLAGS = -Wall -Werror -Wextra -g3
 
 SOURCE =	bubul.c \
 			use.c \
-			doublette.c \
+			chunk_sort.c \
 			chosetri.c \
 
 OBJ = $(SOURCE:.c=.o)

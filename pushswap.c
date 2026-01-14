@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 17:12:40 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/14 17:40:59 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	visualiseur(t_stack **a, t_stack **b)
 
 	tempa = *a;
 	i = 0;
+	sup = 0;
 	if (*b == NULL)
 	{
 		tempb = lstnew(0);
