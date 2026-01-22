@@ -6,13 +6,13 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:26:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 16:05:57 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/22 19:11:42 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
 
-void	pushmaxa(t_stack **a, t_stack **b)
+void	chosetri(t_stack **a, t_stack **b)
 {
 	t_stack	*top;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/01/22 18:52:07 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/22 19:10:55 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,21 @@ void	whatiwant(int want, float disorder, t_stack **a, t_stack **b)
 	if (want == -1)
 		want = adaptative(a, b, disorder);
 	if (want == 1)
-		bubul(a, b);
+		chosetri(a, b);
 	if (want == 2)
-		pushmaxa(a, b);
+		chunk_sort(a, b);
 	// else
-	// 	chunk_sort(a, b);
+	// 	 algorithme avancé à implémenter
 }
 
 int	adaptative(t_stack **a, t_stack **b, float disorder)
 {
 	if (disorder < 0.2)
-		bubul(a, b);
+		chosetri(a, b);
 	else if (disorder < 0.5)
-		pushmaxa(a, b);
+		chunk_sort(a, b);
 	// else
-	// 	chunk_sort(a, b);
+	// 	 algorithme avancé à implémenter
 	return (-1);
 }
 
