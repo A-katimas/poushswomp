@@ -6,16 +6,16 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 16:52:38 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/22 18:49:54 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOOLSSWAP_H
 # define TOOLSSWAP_H
 
-# include "../libft/libft.h"
-# include "../pushswap.h"
-# include "../orders/order.h"
+# include "libft.h"
+# include "pushswap.h"
+# include "order.h"
 
 typedef struct S_stack
 {

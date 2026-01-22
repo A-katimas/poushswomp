@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:59:19 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 18:14:34 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/22 18:42:13 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ void	assign_index(t_stack *a, int *sorted, int size)
 }
 
 
-void 	chunk_sort(t_stack **a, t_stack **b)
-{
+// void 	chunk_sort(t_stack **a, t_stack **b)
+// {

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order.h                                            :+:      :+:    :+:   */
+/*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 17:45:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 16:59:30 by aheno            ###   ########.fr       */
+/*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
+/*   Updated: 2026/01/22 18:49:55 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ORDER_H
-# define ORDER_H
+#ifndef PUSHSWAP_H
+# define PUSHSWAP_H
 
-# include "../tools/toolsswap.h"
-# include "../pushswap.h"
+# include "libft.h"
+# include "toolsswap.h"
+# include "order.h"
 
 typedef struct S_stack	t_stack;
 
-void	bubul(t_stack **a, t_stack **b);
-void	test(t_stack **a, t_stack **b);
-void	pushmaxa(t_stack **a, t_stack **b);
-void	chunk_sort(t_stack **a, t_stack **b);
-
-int		findmaxa(t_stack **a);
-int		findmina(t_stack **a);
-
+void	visualiseur(t_stack **a, t_stack **b);
+void	printStack(t_stack **stack);
+float	compute_disorder(t_stack **stack);
+int		adaptative(t_stack **a, t_stack **b, float disorder);
+int		commande(char *what);
+void	whatiwant(int want, float disorder, t_stack **a, t_stack **b);
 #endif

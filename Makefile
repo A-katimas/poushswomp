@@ -1,51 +1,39 @@
-NAME = pushswap.a
+NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3
-#-fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g3 -I librairie -I libft
 
 LIBFT = libft/libft.a
-TOOLS = tools/tools.a
-ORDER = orders/order.a
 
-SOURCE =	pushswap.c \
-			resolution.c \
+TOOLS_SRC = tools/swap.c tools/push.c tools/rotation.c \
+			tools/reverserota.c tools/ft_use.c tools/utils.c tools/use.c
 
-OBJ = $(SOURCE:.c=.o)
+ORDERS_SRC = orders/bubul.c orders/chunk_sort.c orders/chosetri.c
+
+MAIN_SRC = pushswap.c
+
+ALL_SRC = $(TOOLS_SRC) $(ORDERS_SRC) $(MAIN_SRC)
+
+OBJ = $(ALL_SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(TOOLS) $(ORDER) $(OBJ)
-	ar x $(LIBFT)
-	ar x $(TOOLS)
-	ar x $(ORDER)
-	ar -rcs $@ $(OBJ) *.o
-	rm -f *.o
-	cc $(CFLAGS) main.c $(NAME) -o push_swap
+$(NAME): $(LIBFT) $(OBJ)
+	$(CC) $(CFLAGS) main.c $(OBJ) $(LIBFT) -o $(NAME)
+
 $(LIBFT):
 	make -C libft
 
-$(TOOLS):
-	make -C tools
-
-$(ORDER):
-	make -C orders
-
 test: re
-	cc $(CFLAGS) main.c $(NAME) -o push_swap
-	make clean
-	./push_swap 35 654 23 72 1 3 367 786  32 5 4864  321 56 78 465
+	./$(NAME) 35 654 23 72 1 3 367 786 32 5 4864 321 56 78 465
+
 clean:
 	rm -rf $(OBJ)
 	make -C libft clean
-	make -C tools clean
-	make -C orders clean
 
 fclean: clean
 	rm -rf $(NAME)
 	make -C libft fclean
-	make -C tools fclean
-	make -C orders fclean
 
 re: fclean all
 
-.PHONY :test all clean fclean re
+.PHONY: test all clean fclean re
