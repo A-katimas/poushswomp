@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/23 15:12:05 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 
 void	pb(t_stack **a, t_stack **b)
 {
+	t_stack	*node;
+
 	if (*b == NULL)
 	{
-		*b = lstnew((*a)->data);
-		lstsup(a,*a);
+		node = lstnew((*a)->data);
+		node->index = (*a)->index;
+		*b = node;
+		lstsup(a, *a);
 	}
 	else
 	{
-		lstadd(b, lstnew((*a)->data));
-		lstsup(a,*a);
+		node = lstnew((*a)->data);
+		node->index = (*a)->index;
+		lstadd(b, node);
+		lstsup(a, *a);
 	}
 	down(b);
 	ft_printf("pb\n");
@@ -30,15 +36,21 @@ void	pb(t_stack **a, t_stack **b)
 
 void	pa(t_stack **a, t_stack **b)
 {
+	t_stack	*node;
+
 	if (*a == NULL)
 	{
-		*a = lstnew((*b)->data);
-		lstsup(b,*b);
+		node = lstnew((*b)->data);
+		node->index = (*b)->index;
+		*a = node;
+		lstsup(b, *b);
 	}
 	else
 	{
-		lstadd(a,lstnew((*b)->data));
-		lstsup(b,*b);
+		node = lstnew((*b)->data);
+		node->index = (*b)->index;
+		lstadd(a, node);
+		lstsup(b, *b);
 	}
 	down(a);
 	ft_printf("pa\n");
