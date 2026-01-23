@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:26:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/22 19:11:42 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/23 11:34:20 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void	chosetri(t_stack **a, t_stack **b)
 		while (top->data != i)
 		{
 			rra(a);
-			visualiseur(a, b);
+			// visualiseur(a, b);
 			down(&top);
 		}
 		pb(a, b);
-		visualiseur(a, b);
+		// visualiseur(a, b);
 	}
 	while (lenlist(b) != 0)
 	{
 		pa(a, b);
-		visualiseur(a, b);
+		// visualiseur(a, b);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/22 18:49:55 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/23 14:57:16 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct S_stack	t_stack;
 
-void	visualiseur(t_stack **a, t_stack **b);
-void	printStack(t_stack **stack);
+// void	visualiseur(t_stack **a, t_stack **b);
+// void	printStack(t_stack **stack);
 float	compute_disorder(t_stack **stack);
 int		adaptative(t_stack **a, t_stack **b, float disorder);
 int		commande(char *what);
