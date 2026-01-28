@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 16:32:38 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/28 18:30:05 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,33 @@ typedef struct S_stack
     t_datastack *datastack;
 }	t_stack;
 
-void	swap(int *a, int *b);
-void	up(t_stack **stack);
-void	down(t_stack **stack);
-
+//swap
 void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
+void	swap(int *a, int *b);
 
+//push
 void	pb(t_stack **a, t_stack **b);
 void	pa(t_stack **a, t_stack **b);
 
+//rotation
 void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
+void	down(t_stack **stack);
 
+//reverserota
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+void	up(t_stack **stack);
 
+//ft_use
 t_stack	*lstnew(int content,t_datastack *data);
 void	lstadd(t_stack **lst, t_stack *new);
 void	lstsup(t_stack **lst, t_stack *sup);
 int		lenlist(t_stack **stack);
-void datainit(t_datastack *data);
+void	datainit(t_datastack *data);
 
 #endif

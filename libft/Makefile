@@ -45,7 +45,9 @@ SOURCE =	ft_strlcat.c \
 			ft_lstclear_bonus.c \
 			ft_lstiter_bonus.c \
 			ft_lstmap_bonus.c \
-			ft_printf.c
+			ft_findisnum.c \
+			ft_printf.c \
+			ft_printfd.c
 
 OBJ = $(SOURCE:.c=.o)
 
