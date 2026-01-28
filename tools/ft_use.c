@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_use.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:12:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 13:56:14 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/28 16:32:21 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-t_stack	*lstnew(int content)
+t_stack	*lstnew(int content,t_datastack *data)
 {
 	t_stack	*newlist;
 
 	newlist = ft_calloc(1, sizeof(t_stack));
 	if (newlist == NULL)
 		return (NULL);
+    newlist->datastack = data;
 	newlist->data = content;
 	newlist->next = newlist;
 	newlist->prev = newlist;
@@ -84,4 +85,20 @@ int	lenlist(t_stack **stack)
 		i++;
 	}
 	return (i);
+}
+
+void datainit(t_datastack *data)
+{
+    data->sa = 0;
+    data->sb = 0;
+    data->ss = 0;
+    data->pa = 0;
+    data->pb = 0;
+    data->ra = 0;
+    data->rb = 0;
+    data->rr = 0;
+    data->rra = 0;
+    data->rrb = 0;
+    data->rrr = 0;
+    data->total = 0;
 }
