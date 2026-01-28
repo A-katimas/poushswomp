@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/01/22 19:10:55 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/28 15:08:47 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ int	commande(char *what)
 
 void	whatiwant(int want, float disorder, t_stack **a, t_stack **b)
 {
+	int	size;
+
+	size = lenlist(a);
+	if (size <= 3 && size > 1 && !*b)
+	{
+		sort_three(a);
+		return ;
+	}
 	if (want == -1)
 		want = adaptative(a, b, disorder);
 	if (want == 1)
@@ -36,6 +44,14 @@ void	whatiwant(int want, float disorder, t_stack **a, t_stack **b)
 
 int	adaptative(t_stack **a, t_stack **b, float disorder)
 {
+	int	size;
+
+	size = lenlist(a);
+	if (size <= 3 && size > 1 && !*b)
+	{
+		sort_three(a);
+		return (-1);
+	}
 	if (disorder < 0.2)
 		chosetri(a, b);
 	else if (disorder < 0.5)
