@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 19:14:11 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:49:32 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 #include <stdio.h>
 
 void print_bench(t_stack *list,float disorder,char *strategy );
-int init_stack(int nbenter, char **entrer ,int i, t_stack **a, t_stack **b, t_datastack *data);
+int init_stack(int nbenter, char **entrer ,int i, t_stack **a, t_stack **b,);
 
 
 int	main(int ac, char **av)
 {
 	int		i;
 	int		want;
-	float	disorder;
-    int end;
+	int		end;
 	t_stack	*b;
 	t_stack	*a;
-    t_datastack data;
+
 
 	i = 1;
 	want = -1;
@@ -36,17 +35,18 @@ int	main(int ac, char **av)
 		want = commande(&av[1][2]);
 		i++;
 	}
-    end = init_stack(ac,av,i,&a,&b,&data);
-    if (end == 0){
-        return 0;}
-	disorder = compute_disorder(&a);
-	whatiwant(want, disorder, &a, &b);
-    print_bench(a,disorder,"chien");
+    end = init_stack(ac, av, i, &a, &b, &data);
+    if (end == 0)
+        return (0);
+	whatiwant(want, &a, &b);
+    print_bench(a, disorder, "chien");
 	while (a)
 		lstsup(&a, a);
 }
-int init_stack(int nbenter, char **entrer ,int i, t_stack **a, t_stack **b, t_datastack *data)
+int init_stack(int nbenter, char **entrer ,int i, t_stack **a, t_stack **b,)
 {
+	t_datastack data;
+		
     datainit(data);
 	*a = lstnew(ft_atoi(entrer[i]),data);
 	*b = NULL;
@@ -88,7 +88,7 @@ void print_bench(t_stack *list,float disorder,char *strategy)
     ft_printf("|sb: %d  | rb: %d  | pb: %d \t|\n",list->datastack->sb,list->datastack->rb,list->datastack->pb);
     ft_printf("|_______________________________|\n");
     ft_printf("|                               |\n");
-    ft_printf("|rra: %d | rrb: %d | ss: %d \t|\n",list->datastack->sb,list->datastack->rb,list->datastack->pb);
+    ft_printf("|rra: %d | rrb: %d | ss: %d \t|\n",list->datastack->sb,list->datastack->rb,list->datastack->ss);
     ft_printf("|_______________________________|\n");
     ft_printf("|                               |\n");
     ft_printf("|          \x1B[31mtotal: %d \x1B[0m        \t|\n",list->datastack->total);

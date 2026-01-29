@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 18:31:22 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:42:29 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ typedef struct S_stack	t_stack;
 float	compute_disorder(t_stack **stack);
 int		adaptative(t_stack **a, t_stack **b, float disorder);
 int		commande(char *what);
-void	whatiwant(int want, float disorder, t_stack **a, t_stack **b);
+void	whatiwant(int want, t_stack **a, t_stack **b);
 
 #endif

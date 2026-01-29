@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printfd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:30:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 17:25:47 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:03:28 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	inhexa(unsigned int n, int i);
 void	cfekoi(char c, va_list varg);
 
-int	ft_printfd(int fd,const char *str, ...)
+int	ft_printfd(int fd, const char *str, ...)
 {
 	va_list	var;
 	int		i;
@@ -39,7 +39,7 @@ int	ft_printfd(int fd,const char *str, ...)
 		i++;
 	}
 	va_end(var);
-	return (i-j);
+	return (i - j);
 }
 
 void	inhexa(unsigned int n, int i)

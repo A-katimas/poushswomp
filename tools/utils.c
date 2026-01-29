@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/01/28 15:08:47 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/29 12:42:18 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ int	commande(char *what)
 		return (0);
 }
 
-void	whatiwant(int want, float disorder, t_stack **a, t_stack **b)
+void	whatiwant(int want,  t_stack **a, t_stack **b)
 {
 	int	size;
+	float disorder;
 
+	disorder = compute_disorder(&a);
 	size = lenlist(a);
 	if (size <= 3 && size > 1 && !*b)
 	{
