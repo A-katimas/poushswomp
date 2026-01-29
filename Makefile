@@ -8,7 +8,7 @@ TOOLS_SRC = tools/swap.c tools/push.c tools/rotation.c \
 			tools/reverserota.c tools/ft_use.c tools/utils.c tools/use.c
 
 ORDERS_SRC = orders/chunk_sort.c orders/chosetri.c orders/chunk_sort_utils.c \
-		orders/chunk_sort_utils2.c orders/sort_three.c
+		orders/chunk_sort_utils2.c orders/sort_three.c orders/radix_LSD.c
 
 MAIN_SRC = pushswap.c
 
