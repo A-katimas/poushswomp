@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/01/29 12:42:18 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/30 11:56:21 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ int	commande(char *what)
 {
 	if (!ft_strncmp(what, "simple", 6))
 		return (1);
-	if (!ft_strncmp(what, "complex", 6))
+    if (!ft_strncmp(what, "medium", 6))
 		return (2);
+    if (!ft_strncmp(what, "complex", 7))
+		return (3);
 	else
 		return (0);
 }
@@ -27,7 +29,7 @@ void	whatiwant(int want,  t_stack **a, t_stack **b)
 	int	size;
 	float disorder;
 
-	disorder = compute_disorder(&a);
+	disorder = compute_disorder(a);
 	size = lenlist(a);
 	if (size <= 3 && size > 1 && !*b)
 	{
@@ -40,7 +42,9 @@ void	whatiwant(int want,  t_stack **a, t_stack **b)
 		chosetri(a, b);
 	if (want == 2)
 		chunk_sort(a, b);
-	// else
+	if (want == 3)
+		radix_lsd(a, b);
+        // else
 	// 	 algorithme avancé à implémenter
 }
 

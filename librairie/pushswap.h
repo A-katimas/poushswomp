@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/29 12:42:29 by aheno            ###   ########.fr       */
+/*   Updated: 2026/01/30 12:06:44 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,10 @@ float	compute_disorder(t_stack **stack);
 int		adaptative(t_stack **a, t_stack **b, float disorder);
 int		commande(char *what);
 void	whatiwant(int want, t_stack **a, t_stack **b);
+
+//benchmarck
+void whahedo(int want ,t_stack **a, t_stack **b);
+char *what_strategy(int want, t_stack **a);
+void print_bench(t_stack **list,float disorder,char *strategy);
 
 #endif

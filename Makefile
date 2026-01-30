@@ -5,7 +5,8 @@ CFLAGS = -Wall -Werror -Wextra -g3 -I librairie -I libft
 LIBFT = libft/libft.a
 
 TOOLS_SRC = tools/swap.c tools/push.c tools/rotation.c \
-			tools/reverserota.c tools/ft_use.c tools/utils.c tools/use.c
+			tools/reverserota.c tools/ft_use.c tools/utils.c tools/use.c tools/benchmarck.c
+
 
 ORDERS_SRC = orders/chunk_sort.c orders/chosetri.c orders/chunk_sort_utils.c \
 		orders/chunk_sort_utils2.c orders/sort_three.c orders/radix_LSD.c
