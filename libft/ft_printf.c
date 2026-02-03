@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:30:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 16:42:01 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:03:53 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 #include <stdio.h>
 
-void	inhexa(unsigned int n, int i);
-void	cfekoi(char c, va_list varg);
+static void	inhexa(unsigned int n, int i);
+static void	cfekoi(char c, va_list varg);
 
 int	ft_printf(const char *str, ...)
 {

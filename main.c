@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 15:17:34 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:35:22 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int ac, char **av)
     t_datastack data;
 
 	i = 1;
-	want = -1;
+	want = 0;
 	if (ac == 1)
 		return (0);
 	while (av[i][0] == '-' && av[i][1] == '-')
@@ -36,7 +36,7 @@ int	main(int ac, char **av)
     if (end == 0)
         return (0);
     whahedo(want ,&a, &b);
-	while (a)
+    while (a)
         nodesup(&a, a);
 
 }

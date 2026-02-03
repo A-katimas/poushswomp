@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printfd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:30:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/29 12:03:28 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/03 17:27:34 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 #include <stdio.h>
 
-void	inhexa(unsigned int n, int i);
-void	cfekoi(char c, va_list varg);
+static void	inhexa(unsigned int n, int i, int fd);
+static void	cfekoi(char c, va_list varg,int fd);
 
 int	ft_printfd(int fd, const char *str, ...)
 {
@@ -31,7 +31,7 @@ int	ft_printfd(int fd, const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			cfekoi(str[i], var);
+			cfekoi(str[i], var, fd);
 			j++;
 		}
 		else
@@ -42,7 +42,7 @@ int	ft_printfd(int fd, const char *str, ...)
 	return (i - j);
 }
 
-void	inhexa(unsigned int n, int i)
+static void	inhexa(unsigned int n, int i, int fd)
 {
 	char	*base16;
 	char	*base10;
@@ -53,42 +53,42 @@ void	inhexa(unsigned int n, int i)
 	if (i == 2)
 	{
 		if (n >= 10)
-			inhexa(n / 10, i);
+			inhexa(n / 10, i,fd);
 		c = base10[n % 10];
-		write(1, &c, 1);
+		write(fd, &c, 1);
 		return ;
 	}
 	else
 	{
 		if (n >= 16)
-			inhexa(n / 16, i);
+			inhexa(n / 16, i,fd);
 		c = base16[n % 16];
 		if (i == 1)
 			c = ft_toupper(c);
-		write(1, &c, 1);
+		write(fd, &c, 1);
 		return ;
 	}
 }
 
-void	cfekoi(char c, va_list var)
+static void	cfekoi(char c, va_list var,int fd)
 {
 	if (c == 'c')
-		ft_putchar_fd(va_arg(var, int), 1);
+		ft_putchar_fd(va_arg(var, int), fd);
 	else if (c == 's')
-		ft_putstr_fd(va_arg(var, char *), 1);
+		ft_putstr_fd(va_arg(var, char *), fd);
 	else if (c == 'x')
-		inhexa(va_arg(var, unsigned int), 0);
+		inhexa(va_arg(var, unsigned int), 0,fd);
 	else if (c == 'X')
-		inhexa(va_arg(var, unsigned int), 1);
+		inhexa(va_arg(var, unsigned int), 1,fd);
 	else if (c == 'u')
-		inhexa(va_arg(var, unsigned int), 2);
+		inhexa(va_arg(var, unsigned int), 2,fd);
 	else if (c == 'p')
 	{
 		write(1, "0x", 2);
-		inhexa(va_arg(var, size_t), 0);
+		inhexa(va_arg(var, size_t), 0, fd);
 	}
 	else if (c == 'd' || c == 'i')
-		ft_putnbr_fd(va_arg(var, int), 1);
+		ft_putnbr_fd(va_arg(var, int), fd);
 	else
-		write(1, &c, 1);
+		write(fd, &c, 1);
 }

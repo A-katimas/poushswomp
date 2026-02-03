@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:05:09 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 14:47:38 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:42:56 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void whahedo(int want ,t_stack **a, t_stack **b)
     float disorder ;
 
     disorder = compute_disorder(a);
+
     whatiwant(want, a, b);
 }
 
@@ -35,32 +36,32 @@ char *what_strategy(int want, t_stack **a)
 		return("\x1B[33mchunk_sort\x1B[0m");
 	if (want == 5)
 		return("\x1B[35mradix_lsd\x1B[0m");
-    return("\x1B[31mjysaispas\x1B[0m");
+    return("\x1B[31mError    \x1B[0m");
 }
 
 void print_bench(t_stack **list,float disorder,char *strategy)
 {
-    ft_printf("BenchMarck\n");
-    ft_printf("_________________________________\n");
-    ft_printf("|                               |\n");
-    ft_printf("|disorder: %d%%         \t\t|\n", (int)(disorder * 100) - ((int)disorder * 100));
-    ft_printf("|_______________________________|\n");
-    ft_printf("|                               |\n");
-    ft_printf("|stratergy: %s      \t|\n",strategy);
-    ft_printf("|_______________________________|\n");
-    ft_printf("|                               |\n");
-    ft_printf("|total_ops: %d              \t|\n",(*list)->datastack->total);
-    ft_printf("|_______________________________|\n");
-    ft_printf("|                               |\n");
-    ft_printf("|sa: %d  | ra: %d  | pa: %d \t|\n",(*list)->datastack->sa,(*list)->datastack->ra,(*list)->datastack->pa);
-    ft_printf("|_______________________________|\n");
-    ft_printf("|                               |\n");
-    ft_printf("|sb: %d  | rb: %d  | pb: %d \t|\n",(*list)->datastack->sb,(*list)->datastack->rb,(*list)->datastack->pb);
-    ft_printf("|_______________________________|\n");
-    ft_printf("|                               |\n");
-    ft_printf("|rra: %d | rrb: %d | ss: %d \t|\n",(*list)->datastack->sb,(*list)->datastack->rb,(*list)->datastack->ss);
-    ft_printf("|_______________________________|\n");
-    ft_printf("|                               |\n");
-    ft_printf("|          \x1B[31mtotal: %d \x1B[0m        \t|\n",(*list)->datastack->total);
-    ft_printf("|_______________________________|\n");
+    ft_printfd(2,"BenchMarck\n");
+    ft_printfd(2,"_________________________________\n");
+    ft_printfd(2,"|                               |\n");
+    ft_printfd(2,"|disorder: %d%%         \t\t|\n", (int)(disorder * 100) - ((int)disorder * 100));
+    ft_printfd(2,"|_______________________________|\n");
+    ft_printfd(2,"|                               |\n");
+    ft_printfd(2,"|strategy: %s      \t|\n",strategy);
+    ft_printfd(2,"|_______________________________|\n");
+    ft_printfd(2,"|                               |\n");
+    ft_printfd(2,"|total_ops: %d              \t|\n",(*list)->datastack->total);
+    ft_printfd(2,"|_______________________________|\n");
+    ft_printfd(2,"|                               |\n");
+    ft_printfd(2,"|sa: %d  | ra: %d  | pa: %d \t|\n",(*list)->datastack->sa,(*list)->datastack->ra,(*list)->datastack->pa);
+    ft_printfd(2,"|_______________________________|\n");
+    ft_printfd(2,"|                               |\n");
+    ft_printfd(2,"|sb: %d  | rb: %d  | pb: %d \t|\n",(*list)->datastack->sb,(*list)->datastack->rb,(*list)->datastack->pb);
+    ft_printfd(2,"|_______________________________|\n");
+    ft_printfd(2,"|                               |\n");
+    ft_printfd(2,"|rra: %d | rrb: %d | ss: %d \t|\n",(*list)->datastack->sb,(*list)->datastack->rb,(*list)->datastack->ss);
+    ft_printfd(2,"|_______________________________|\n");
+    ft_printfd(2,"|                               |\n");
+    ft_printfd(2,"|          \x1B[31mtotal: %d \x1B[0m        \t|\n",(*list)->datastack->total);
+    ft_printfd(2,"|_______________________________|\n");
 }

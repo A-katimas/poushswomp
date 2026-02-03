@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:11:30 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 15:16:18 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:46:38 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int init(char **entrer, t_stack **a, t_stack **b, t_datastack *data)
     datainit(data);
 	*a = lstnew(ft_atoi(entrer[i]),data);
 	*b = NULL;
+    i++;
     error = init2(entrer,i, a,data);
     if (error == 0)
         return 0;
@@ -42,7 +43,7 @@ int init2(char **enter,int i, t_stack **a,t_datastack *data)
         }
         else
         {
-            ft_printf("Error NaN\n");
+            ft_printf("Error\n");
             len = lenlist(a);
         	while (len--)
                 nodesup(a, *a);
@@ -62,7 +63,7 @@ int doublon(int find, t_stack **stack )
     {
         if (find == temp->data)
         {
-            ft_printf("ERROR dobble");
+            ft_printf("Error\n");
             return 0;
         }
         temp=temp->next;

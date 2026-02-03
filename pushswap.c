@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 13:53:28 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:43:10 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,20 @@
 // 	sup = 0;
 // 	if (*b == NULL)
 // 	{
-// 		tempb = lstnew(0);
+// 		tempb = lstnew(0,tempa->datastack);
 // 		sup ++;
 // 	}
 // 	else
 // 		tempb = *b;
 // 	if (*a == NULL)
 // 	{
-// 		tempa = lstnew(0);
+// 		tempa = lstnew(0,tempb->datastack);
 // 		sup ++;
 // 	}
 // 	else
 // 		tempa = *a;
 // 	// printf("\033[2J\033[H");
-// 	system("clear");
+// 	// system("clear");
 // 	ft_printf("\ttab1\t\t\t||\ttab2\n");
 // 	while (i <= lenlist(a) || i <= lenlist(b))
 // 	{
