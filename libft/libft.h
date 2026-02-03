@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:02:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 18:15:35 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 18:28:04 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_printf(const char *str, ...);
 int		ft_printfd(int fd,const char *str, ...);
+long	ft_atol(const char *nptr);
 
 #endif

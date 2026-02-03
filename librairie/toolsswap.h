@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 15:12:37 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 18:53:38 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft.h"
 # include "pushswap.h"
 # include "order.h"
+# include "limits.h"
 
 typedef struct S_datastack
 {
@@ -72,7 +73,7 @@ int		lenlist(t_stack **stack);
 void	datainit(t_datastack *data);
 
 //intisialisation_tool
-int init2(char **enter,int i, t_stack **a,t_datastack *data);
+int init_list(char **enter,int i, t_stack **a,t_datastack *data);
 int init(char **entrer, t_stack **a, t_stack **b,t_datastack *data);
 int doublon(int find, t_stack **stack );
 
