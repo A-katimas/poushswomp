@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 18:30:05 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 15:12:37 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,17 @@ void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 void	up(t_stack **stack);
 
-//ft_use
+//lst_utilis
 t_stack	*lstnew(int content,t_datastack *data);
 void	lstadd(t_stack **lst, t_stack *new);
-void	lstsup(t_stack **lst, t_stack *sup);
+void	nodesup(t_stack **lst, t_stack *sup);
 int		lenlist(t_stack **stack);
 void	datainit(t_datastack *data);
+
+//intisialisation_tool
+int init2(char **enter,int i, t_stack **a,t_datastack *data);
+int init(char **entrer, t_stack **a, t_stack **b,t_datastack *data);
+int doublon(int find, t_stack **stack );
+
 
 #endif

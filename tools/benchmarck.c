@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:05:09 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/30 12:05:49 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:47:38 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void whahedo(int want ,t_stack **a, t_stack **b)
 
     disorder = compute_disorder(a);
     whatiwant(want, a, b);
-    print_bench(a, disorder, what_strategy(want, a));
 }
 
 char *what_strategy(int want, t_stack **a)
@@ -26,17 +25,17 @@ char *what_strategy(int want, t_stack **a)
     int	size;
 
 	size = lenlist(a);
-	if (size <= 3 && size > 1 )
+	if (size <= 3 && size >= 1 )
 		return ("\x1B[34msort_three\x1B[0m");
-	if (want == -1)
-		return("\x1B[32madaptative\x1B[0m");
-	if (want == 1)
-		return("chosetri");
-	if (want == 2)
-		return("chunk_sort");
+	if (want == 0)
+		return("\x1B[36madaptative\x1B[0m");
 	if (want == 3)
-		return("radix_lsd");
-    return("jysaispas");
+		return("\x1B[32mchosetri\x1B[0m");
+	if (want == 4)
+		return("\x1B[33mchunk_sort\x1B[0m");
+	if (want == 5)
+		return("\x1B[35mradix_lsd\x1B[0m");
+    return("\x1B[31mjysaispas\x1B[0m");
 }
 
 void print_bench(t_stack **list,float disorder,char *strategy)

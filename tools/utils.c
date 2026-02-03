@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/01/30 11:56:21 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:46:58 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 int	commande(char *what)
 {
-	if (!ft_strncmp(what, "simple", 6))
-		return (1);
+    
+    if (!ft_strncmp(what, "simple", 6))
+        return (3);
     if (!ft_strncmp(what, "medium", 6))
-		return (2);
+        return (4);
     if (!ft_strncmp(what, "complex", 7))
-		return (3);
+        return (5);
+    if (!ft_strncmp(what, "bench", 5))
+        return (11);
 	else
 		return (0);
 }
@@ -31,19 +34,22 @@ void	whatiwant(int want,  t_stack **a, t_stack **b)
 
 	disorder = compute_disorder(a);
 	size = lenlist(a);
+
 	if (size <= 3 && size > 1 && !*b)
 	{
 		sort_three(a);
 		return ;
 	}
-	if (want == -1)
-		want = adaptative(a, b, disorder);
-	if (want == 1)
-		chosetri(a, b);
-	if (want == 2)
+	if (want == -1 || want%10 == 0)
+        adaptative(a, b, disorder);
+	else if (want == 3 || want % 10 == 3)
+        chosetri(a, b);
+    else if (want == 4 || want % 10 == 4)
 		chunk_sort(a, b);
-	if (want == 3)
+    else if (want == 5 || want % 10 == 5)
 		radix_lsd(a, b);
+    if (want >= 6)
+        print_bench(a, disorder, what_strategy(want%10, a));
         // else
 	// 	 algorithme avancé à implémenter
 }
@@ -62,8 +68,8 @@ int	adaptative(t_stack **a, t_stack **b, float disorder)
 		chosetri(a, b);
 	else if (disorder < 0.5)
 		chunk_sort(a, b);
-	// else
-	// 	 algorithme avancé à implémenter
+	else
+	    radix_lsd(a, b);
 	return (-1);
 }
 

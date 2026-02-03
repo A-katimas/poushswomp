@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:12:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 16:32:21 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:23:02 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,18 @@ void	lstadd(t_stack **lst, t_stack *new)
 	new->next = *lst;
 }
 
-void	lstsup(t_stack **lst, t_stack *sup)
+void	nodesup(t_stack **lst, t_stack *sup)
 {
 	t_stack	*temp;
 	t_stack	*point;
 
+	if (!lst || *lst == NULL )
+        {
+            lst = NULL;
+            return;
+        }
 	temp = sup->next;
 	point = sup->prev;
-	if (!lst || *lst == NULL )
-		return ;
 	if (sup == sup->next)
 	{
 		*lst = NULL;

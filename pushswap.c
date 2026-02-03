@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/23 14:57:06 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/03 13:53:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@
 // 		tempb = tempb->next;
 // 	}
 // 	if (sup != 0)
-// 		lstsup(&tempb, tempb);
+// 		nodesup(&tempb, tempb);
 // 	ft_printf("taille a %d taille b %d\n\n",lenlist(a),lenlist(b));
 // 	ft_printf("\n\n\n\n");
 // 	usleep(100000);
