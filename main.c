@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:36:58 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 15:47:47 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	main(int ac, char **av)
 
 	i = 1;
 	want = 0;
-	if (ac == 1)
+	if (ac <= 2)
 		return (0);
 	while (av[i][0] == '-' && av[i][1] == '-')
 	{
-		want += commande(&av[i][2]);
+		want = commande(want, &av[i][2]);
 		i++;
 	}
-	if (init(av, &a, &b, &data) == 0)
+	if (init(av, &a, &b, &data) == 0 || lenlist(&a) == 1)
 		return (0);
 	whatiwant(want, &a, &b);
 	while (a)

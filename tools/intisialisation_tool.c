@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:11:30 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:23:41 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:25:18 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,31 @@ int	init(char **entrer, t_stack **a, t_stack **b, t_datastack *data)
 {
 	int	i;
 	int	error;
+	int	len ;
 
 	i = 1;
 	while (entrer[i][0] == '-' && entrer[i][1] == '-')
 		i++;
 	datainit(data);
 	if (ft_atol(entrer[i]) < INT_MIN || ft_atol(entrer[i]) > INT_MAX)
-		return (ft_printfd(1, "Error\n"), 0);
+		return (ft_printfd(2, "Error\n"), 0);
 	*a = lstnew(ft_atoi(entrer[i]), data);
 	*b = NULL;
 	i++;
 	error = init_list(entrer, i, a, data);
 	if (error == 0)
-		return (ft_printfd(1, "Error\n"), 0);
+	{
+		len = lenlist(a);
+		while (len--)
+			nodesup(a, *a);
+		return (ft_printfd(2, "Error\n"), 0);
+	}
 	return (1);
 }
 
 int	init_list(char **enter, int i, t_stack **a, t_datastack *data)
 {
-	int	len ;
+
 
 	while (enter[i])
 	{
@@ -47,12 +53,7 @@ int	init_list(char **enter, int i, t_stack **a, t_datastack *data)
 			lstadd(a, lstnew(ft_atoi(enter[i]), data));
 		}
 		else
-		{
-			len = lenlist(a);
-			while (len--)
-				nodesup(a, *a);
 			return (0);
-		}
 		i++;
 	}
 	return (1);

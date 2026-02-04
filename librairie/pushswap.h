@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:49:43 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:09:10 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct S_stack	t_stack;
 // utils
 float	compute_disorder(t_stack **stack);
 int		adaptative(t_stack **a, t_stack **b, float disorder);
-int		commande(char *what);
+int		commande(int actual, char *what);
 void	whatiwant(int want, t_stack **a, t_stack **b);
 
 //benchmarck
