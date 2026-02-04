@@ -6,13 +6,11 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/04 16:32:35 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:35:30 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
-
-char	*disorder_to_str(float disorder);
 
 int	commande(int actual, char *what)
 {
@@ -62,7 +60,6 @@ void	whatiwant(int want, t_stack **a, t_stack **b)
 		radix_lsd(a, b);
 	if (want > 9)
 		print_bench(a, disorder, what_strategy(want % 10, a));
-
 }
 
 int	adaptative(t_stack **a, t_stack **b, float disorder)
@@ -109,10 +106,3 @@ float	compute_disorder(t_stack **stack)
 	}
 	return (mistakes / total_pairs);
 }
-
-char	*disorder_to_str(float disorder)
-{
-	ft_printf("la %d",disorder);
-	return("relou");
-}
-

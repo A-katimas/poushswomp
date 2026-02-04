@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:11:30 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 16:25:18 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:35:46 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int	init(char **entrer, t_stack **a, t_stack **b, t_datastack *data)
 
 int	init_list(char **enter, int i, t_stack **a, t_datastack *data)
 {
-
-
 	while (enter[i])
 	{
 		if (ft_findisnum(enter[i]))
