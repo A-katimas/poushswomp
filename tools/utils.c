@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/04 11:28:09 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:01:54 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ void	whatiwant(int want, t_stack **a, t_stack **b)
 		chunk_sort(a, b);
 	else if (want == 5 || want % 10 == 5)
 		radix_lsd(a, b);
-	if (want >= 6)
+	else if (want >= 9)
 		print_bench(a, disorder, what_strategy(want % 10, a));
+	else
+		return ((void)ft_printfd(1, "\e[1;97m\x1B[31mError\x1B[0m\e[0m"));
 }
 
 int	adaptative(t_stack **a, t_stack **b, float disorder)
