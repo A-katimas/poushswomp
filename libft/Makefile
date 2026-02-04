@@ -45,7 +45,7 @@ SOURCE =	ft_strlcat.c \
 			ft_lstclear_bonus.c \
 			ft_lstiter_bonus.c \
 			ft_lstmap_bonus.c \
-			ft_findisnum.c \
+			ft_is_number.c \
 			ft_printf.c \
 			ft_printfd.c \
 			ft_atol.c

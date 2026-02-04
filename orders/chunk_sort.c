@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:59:19 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 10:30:54 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/04 19:12:22 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	push_chunk_to_b(t_stack **a, t_stack **b, int chunk_min, int chunk_max)
 	int	size;
 
 	median = (chunk_min + chunk_max) / 2;
-	size = lenlist(a);
+	size = list_size(a);
 	while (size-- > 0)
 	{
 		if ((*a)->index >= chunk_min && (*a)->index <= chunk_max)
 		{
 			pb(a, b);
-			if (*b && (*b)->index < median && lenlist(b) > 1)
+			if (*b && (*b)->index < median && list_size(b) > 1)
 				rb(b);
 		}
 		else
@@ -38,7 +38,7 @@ void	push_max_to_a(t_stack **a, t_stack **b)
 	int	size;
 
 	max_pos = find_max_index_pos(b);
-	size = lenlist(b);
+	size = list_size(b);
 	if (max_pos <= size / 2)
 	{
 		while (max_pos-- > 0)
@@ -58,7 +58,7 @@ static int	prepare_sort(t_stack **a)
 	int	*sorted;
 	int	size;
 
-	size = lenlist(a);
+	size = list_size(a);
 	sorted = malloc(sizeof(int) * size);
 	if (!sorted)
 		return (-1);

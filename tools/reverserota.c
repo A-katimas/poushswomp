@@ -6,15 +6,15 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:04:00 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:27:20 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:31:42 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#include "swap_utils.h"
 
 void	ra(t_stack **a)
 {
-	if (lenlist(a) > 1)
+	if (list_size(a) > 1)
 	{
 		up(a);
 		ft_printf("ra\n");
@@ -25,7 +25,7 @@ void	ra(t_stack **a)
 
 void	rb(t_stack **b)
 {
-	if (lenlist(b) > 1)
+	if (list_size(b) > 1)
 	{
 		up(b);
 		ft_printf("rb\n");
@@ -36,16 +36,28 @@ void	rb(t_stack **b)
 
 void	rr(t_stack **a, t_stack **b)
 {
-	if (lenlist(a) > 1)
+	int	i ;
+
+	i = 0;
+	if (list_size(a) > 1)
+	{
 		up(a);
-	if (lenlist(b) > 1)
+		i++;
+	}
+	if (list_size(b) > 1)
+	{
 		up(b);
-	ft_printf("rr\n");
-	(*a)->datastack->rr++;
-	(*a)->datastack->total++;
+		i++;
+	}
+	if (i >= 1)
+	{
+		ft_printf("rr\n");
+		(*a)->datastack->rr++;
+		(*a)->datastack->total++;
+	}
 }
 
-void	up(t_stack **stack)
+void	up(t_stack **stack) // ?
 {
 	*stack = (*stack)->next;
 }

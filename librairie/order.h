@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   order.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:45:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/29 13:08:39 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/04 20:14:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ORDER_H
 # define ORDER_H
 
-# include "toolsswap.h"
+# include "swap_utils.h"
 # include "pushswap.h"
 
 typedef struct S_stack	t_stack;
@@ -29,7 +29,7 @@ void	assign_index(t_stack *a, int *sorted, int size);
 
 int		get_chunk_count(int size);
 int		find_max_index_pos(t_stack **b);
-int		findmaxa(t_stack **a);
-int		findmina(t_stack **a);
+int		find_max_a(t_stack **a);
+int		find_min_a(t_stack **a);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:08:33 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:26:59 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:39:25 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#include "swap_utils.h"
 
 void	pb(t_stack **a, t_stack **b)
 {
@@ -18,17 +18,17 @@ void	pb(t_stack **a, t_stack **b)
 
 	if (*b == NULL)
 	{
-		node = lstnew((*a)->data, (*a)->datastack);
+		node = list_new((*a)->data, (*a)->datastack);
 		node->index = (*a)->index;
 		*b = node;
-		nodesup(a, *a);
+		del_node(a, *a);
 	}
 	else
 	{
-		node = lstnew((*a)->data, (*a)->datastack);
+		node = list_new((*a)->data, (*a)->datastack);
 		node->index = (*a)->index;
-		lstadd(b, node);
-		nodesup(a, *a);
+		list_add(b, node);
+		del_node(a, *a);
 	}
 	down(b);
 	(*b)->datastack->pb++;
@@ -39,20 +39,22 @@ void	pb(t_stack **a, t_stack **b)
 void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*node;
+	int		i;
 
+	i = 0;
 	if (*a == NULL)
 	{
-		node = lstnew((*b)->data, (*b)->datastack);
+		node = list_new((*b)->data, (*b)->datastack);
 		node->index = (*b)->index;
 		*a = node;
-		nodesup(b, *b);
+		del_node(b, *b);
 	}
 	else
 	{
-		node = lstnew((*b)->data, (*b)->datastack);
+		node = list_new((*b)->data, (*b)->datastack);
 		node->index = (*b)->index;
-		lstadd(a, node);
-		nodesup(b, *b);
+		list_add(a, node);
+		del_node(b, *b);
 	}
 	down(a);
 	(*a)->datastack->pa++;

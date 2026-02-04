@@ -6,15 +6,15 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:57:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:27:29 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:32:06 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#include "swap_utils.h"
 
 void	rra(t_stack **a)
 {
-	if (lenlist(a) > 1)
+	if (list_size(a) > 1)
 	{
 		down(a);
 		ft_printf("rra\n");
@@ -25,7 +25,7 @@ void	rra(t_stack **a)
 
 void	rrb(t_stack **b)
 {
-	if (lenlist(b) > 1)
+	if (list_size(b) > 1)
 	{
 		down(b);
 		ft_printf("rrb\n");
@@ -36,16 +36,28 @@ void	rrb(t_stack **b)
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	if (lenlist(a) > 1)
+	int	i;
+
+	i = 0;
+	if (list_size(a) > 1)
+	{
 		down(a);
-	if (lenlist(b) > 1)
+		i++;
+	}
+	if (list_size(b) > 1)
+	{
 		down(b);
-	ft_printf("rrr\n");
-	(*a)->datastack->rrr++;
-	(*a)->datastack->total++;
+		i++;
+	}
+	if (i >= 1)
+	{
+		ft_printf("rrr\n");
+		(*a)->datastack->rrr++;
+		(*a)->datastack->total++;
+	}
 }
 
-void	down(t_stack **stack)
+void	down(t_stack **stack) // ?
 {
 	*stack = (*stack)->prev;
 }

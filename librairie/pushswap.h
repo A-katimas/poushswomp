@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 16:09:10 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:14:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define PUSHSWAP_H
 
 # include "libft.h"
-# include "toolsswap.h"
+# include "swap_utils.h" // pas un bon nom d'header, swap_utils.h
 # include "order.h"
 
-typedef struct S_stack	t_stack;
+typedef struct S_stack	t_stack; // s_stack
 
 // void	visualiseur(t_stack **a, t_stack **b);
 // void	printStack(t_stack **stack);
@@ -25,11 +25,11 @@ typedef struct S_stack	t_stack;
 // utils
 float	compute_disorder(t_stack **stack);
 int		adaptative(t_stack **a, t_stack **b, float disorder);
-int		commande(int actual, char *what);
-void	whatiwant(int want, t_stack **a, t_stack **b);
+int		get_flags(int actual_flags, char *current_flags);
+void	what_i_do(int want, t_stack **a, t_stack **b);
 
 //benchmarck
-char	*what_strategy(int want, t_stack **a);
+char	*get_strategy(int want, t_stack **a);
 void	print_bench(t_stack **list, float disorder, char *strategy);
 
 #endif

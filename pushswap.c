@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:58 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:38:07 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:39:25 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@
 // 	sup = 0;
 // 	if (*b == NULL)
 // 	{
-// 		tempb = lstnew(0,tempa->datastack);
+// 		tempb = list_new(0,tempa->datastack);
 // 		sup ++;
 // 	}
 // 	else
 // 		tempb = *b;
 // 	if (*a == NULL)
 // 	{
-// 		tempa = lstnew(0,tempb->datastack);
+// 		tempa = list_new(0,tempb->datastack);
 // 		sup ++;
 // 	}
 // 	else
@@ -40,13 +40,13 @@
 // 	// printf("\033[2J\033[H");
 // 	// system("clear");
 // 	ft_printf("\ttab1\t\t\t||\ttab2\n");
-// 	while (i <= lenlist(a) || i <= lenlist(b))
+// 	while (i <= list_size(a) || i <= list_size(b))
 // 	{
 // 		ft_printf("%d\t",i);
-// 		if (i <lenlist(a))
+// 		if (i <list_size(a))
 // 			ft_printf("%d", tempa->data);
 // 		ft_printf("\t\t\t||\t");
-// 		if (i <lenlist(b))
+// 		if (i <list_size(b))
 // 			ft_printf("%d", tempb->data);
 // 		ft_printf("\n");
 // 		i++;
@@ -54,8 +54,8 @@
 // 		tempb = tempb->next;
 // 	}
 // 	if (sup != 0)
-// 		nodesup(&tempb, tempb);
-// 	ft_printf("taille a %d taille b %d\n\n",lenlist(a),lenlist(b));
+// 		del_node(&tempb, tempb);
+// 	ft_printf("taille a %d taille b %d\n\n",list_size(a),list_size(b));
 // 	ft_printf("\n\n\n\n");
 // 	usleep(100000);
 // }

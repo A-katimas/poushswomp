@@ -6,13 +6,13 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:12:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:25:45 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:39:25 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#include "swap_utils.h"
 
-t_stack	*lstnew(int content, t_datastack *data)
+t_stack	*list_new(int content, t_datastack *data)
 {
 	t_stack	*newlist;
 
@@ -26,7 +26,7 @@ t_stack	*lstnew(int content, t_datastack *data)
 	return (newlist);
 }
 
-void	lstadd(t_stack **lst, t_stack *new)
+void	list_add(t_stack **lst, t_stack *new)
 {
 	t_stack	*temp;
 
@@ -39,7 +39,7 @@ void	lstadd(t_stack **lst, t_stack *new)
 	new->next = *lst;
 }
 
-void	nodesup(t_stack **lst, t_stack *sup)
+void	del_node(t_stack **lst, t_stack *sup)
 {
 	t_stack	*temp;
 	t_stack	*point;
@@ -67,7 +67,7 @@ void	nodesup(t_stack **lst, t_stack *sup)
 	free(sup);
 }
 
-int	lenlist(t_stack **stack)
+int	list_size(t_stack **stack)
 {
 	int		i;
 	t_stack	*temp;
@@ -87,7 +87,7 @@ int	lenlist(t_stack **stack)
 	return (i);
 }
 
-void	datainit(t_datastack *data)
+void	init_data(t_datastack *data)
 {
 	data->sa = 0;
 	data->sb = 0;

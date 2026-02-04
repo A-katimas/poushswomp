@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chosetri.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:26:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/28 13:44:08 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/04 19:50:03 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	chosetri(t_stack **a, t_stack **b)
 	int		i;
 
 	top = *a ;
-	while (lenlist(a) != 0)
+	while (list_size(a) != 0)
 	{
-		i = findmina(a);
+		i = find_min_a(a);
 		while (top->data != i)
 		{
 			rra(a);
@@ -28,7 +28,7 @@ void	chosetri(t_stack **a, t_stack **b)
 		}
 		pb(a, b);
 	}
-	while (lenlist(b) != 0)
+	while (list_size(b) != 0)
 	{
 		pa(a, b);
 	}

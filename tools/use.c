@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   use.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:58:29 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/01/14 16:56:35 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/04 19:52:51 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// utils2.c
+
 #include "order.h"
 
-int	findmaxa(t_stack **a)
+int	find_max_a(t_stack **a)
 {
 	int		grand;
 	t_stack	*index;
@@ -28,7 +30,7 @@ int	findmaxa(t_stack **a)
 	return (grand);
 }
 
-int	findmina(t_stack **a)
+int	find_min_a(t_stack **a)
 {
 	int		grand;
 	t_stack	*index;

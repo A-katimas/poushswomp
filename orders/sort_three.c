@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 15:10:00 by aheno             #+#    #+#             */
-/*   Updated: 2026/01/28 15:23:36 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/04 19:12:22 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sort_three(t_stack **a)
 	int	z;
 	int	size;
 
-	size = lenlist(a);
+	size = list_size(a);
 	if (size < 2)
 		return ;
 	if (size == 2 && (*a)->data > (*a)->next->data)

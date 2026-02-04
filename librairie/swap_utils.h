@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toolsswap.h                                        :+:      :+:    :+:   */
+/*   swap_utils.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:42:20 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:41:15 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:39:25 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLSSWAP_H
-# define TOOLSSWAP_H
+#ifndef SWAP_UTILS_H
+# define SWAP_UTILS_H
 
 # include "libft.h"
 # include "pushswap.h"
@@ -66,15 +66,15 @@ void	rrr(t_stack **a, t_stack **b);
 void	up(t_stack **stack);
 
 //lst_utilis
-t_stack	*lstnew(int content, t_datastack *data);
-void	lstadd(t_stack **lst, t_stack *new);
-void	nodesup(t_stack **lst, t_stack *sup);
-int		lenlist(t_stack **stack);
-void	datainit(t_datastack *data);
+t_stack	*list_new(int content, t_datastack *data);
+void	list_add(t_stack **lst, t_stack *new);
+void	del_node(t_stack **lst, t_stack *sup);
+int		list_size(t_stack **stack);
+void	init_data(t_datastack *data);
 
 //intisialisation_tool
 int		init_list(char **enter, int i, t_stack **a, t_datastack *data);
 int		init(char **entrer, t_stack **a, t_stack **b, t_datastack *data);
-int		doublon(int find, t_stack **stack );
+int		has_duplicated(int find, t_stack **stack );
 
 #endif

@@ -6,36 +6,36 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/04 16:35:30 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:14:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "toolsswap.h"
+#include "swap_utils.h"
 
-int	commande(int actual, char *what)
+int	get_flags(int actual_flags, char *current_flags)
 {
-	if (actual == 0 || actual == 10)
+	if (actual_flags == 0 || actual_flags == 10)
 	{
-		if (!ft_strncmp(what, "simple", 6))
-			return (actual + 2);
-		else if (!ft_strncmp(what, "medium", 6))
-			return (actual + 3);
-		else if (!ft_strncmp(what, "complex", 7))
-			return (actual + 4);
-		else if (!ft_strncmp(what, "bench", 5) && actual == 0)
-			return (actual + 10);
-		else if (!ft_strncmp(what, "adaptative", 5))
-			return (actual + 1);
+		if (!ft_strncmp(current_flags, "simple", 6))
+			return (actual_flags + 2);
+		else if (!ft_strncmp(current_flags, "medium", 6))
+			return (actual_flags + 3);
+		else if (!ft_strncmp(current_flags, "complex", 7))
+			return (actual_flags + 4);
+		else if (!ft_strncmp(current_flags, "bench", 5) && actual_flags == 0)
+			return (actual_flags + 10);
+		else if (!ft_strncmp(current_flags, "adaptative", 5))
+			return (actual_flags + 1);
 	}
-	else if (actual < 10)
+	else if (actual_flags < 10)
 	{
-		if (!ft_strncmp(what, "bench", 5))
-			return (actual + 10);
+		if (!ft_strncmp(current_flags, "bench", 5))
+			return (actual_flags + 10);
 	}
 	return (-1);
 }
 
-void	whatiwant(int want, t_stack **a, t_stack **b)
+void	what_i_do(int want, t_stack **a, t_stack **b) // a changer
 {
 	int		size;
 	float	disorder;
@@ -43,7 +43,7 @@ void	whatiwant(int want, t_stack **a, t_stack **b)
 
 	disorder = compute_disorder(a);
 	calcul_disorder = (int)(disorder * 100) - ((int)disorder * 100);
-	size = lenlist(a);
+	size = list_size(a);
 	if (want == -1)
 		return ((void)ft_printfd(2, "\e[1;97m\x1B[31mError\x1B[0m\e[0m\n"));
 	if (disorder == 0)
@@ -59,14 +59,14 @@ void	whatiwant(int want, t_stack **a, t_stack **b)
 	if (want % 10 == 4)
 		radix_lsd(a, b);
 	if (want > 9)
-		print_bench(a, disorder, what_strategy(want % 10, a));
+		print_bench(a, disorder, get_strategy(want % 10, a));
 }
 
 int	adaptative(t_stack **a, t_stack **b, float disorder)
 {
 	int	size;
 
-	size = lenlist(a);
+	size = list_size(a);
 	if (size <= 3 && size > 1 && !*b)
 	{
 		sort_three(a);
@@ -91,7 +91,7 @@ float	compute_disorder(t_stack **stack)
 	i = *stack;
 	j = (*stack)->next;
 	mistakes = 0.00;
-	total_pairs = 0.00 ;
+	total_pairs = 0.00;
 	while (i != *stack || total_pairs == 0)
 	{
 		while (j != *stack)

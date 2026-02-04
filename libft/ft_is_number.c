@@ -6,13 +6,13 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:15:13 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:43:13 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:34:45 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_findisnum(char *str)
+int	ft_is_number(char *str)
 {
 	int	i ;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_LSD.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:08:51 by aheno             #+#    #+#             */
-/*   Updated: 2026/01/29 13:08:52 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/04 19:12:22 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	prepare_indices(t_stack **a)
 	int	*sorted;
 	int	size;
 
-	size = lenlist(a);
+	size = list_size(a);
 	if (size <= 0)
 		return (0);
 	sorted = malloc(sizeof(int) * size);
