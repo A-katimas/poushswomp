@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/04 12:01:54 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:20:32 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 int	commande(char *what)
 {
 	if (!ft_strncmp(what, "simple", 6))
-		return (3);
+		return (1);
 	else if (!ft_strncmp(what, "medium", 6))
-		return (4);
+		return (2);
 	else if (!ft_strncmp(what, "complex", 7))
-		return (5);
+		return (4);
 	else if (!ft_strncmp(what, "bench", 5))
 		return (10);
-	else if (!ft_strncmp(what, "bench", 5))
+	else if (!ft_strncmp(what, "adaptative", 5))
 		return (0);
 	else
 		return (0);
@@ -44,11 +44,11 @@ void	whatiwant(int want, t_stack **a, t_stack **b)
 	}
 	if (want == 0 || want % 10 == 0)
 		adaptative(a, b, disorder);
-	else if (want == 3 || want % 10 == 3)
+	else if (want == 1 || want % 10 == 1)
 		chosetri(a, b);
-	else if (want == 4 || want % 10 == 4)
+	else if (want == 2 || want % 10 == 2)
 		chunk_sort(a, b);
-	else if (want == 5 || want % 10 == 5)
+	else if (want == 4 || want % 10 == 4)
 		radix_lsd(a, b);
 	else if (want >= 9)
 		print_bench(a, disorder, what_strategy(want % 10, a));

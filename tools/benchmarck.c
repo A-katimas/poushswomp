@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:05:09 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 11:38:11 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:11:24 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*what_strategy(int want, t_stack **a)
 		return ("\x1B[34msort_three\x1B[0m");
 	if (want == 0)
 		return ("\x1B[36madaptative\x1B[0m");
-	if (want == 3)
+	if (want == 1)
 		return ("\x1B[32mchosetri\x1B[0m");
-	if (want == 4)
+	if (want == 2)
 		return ("\x1B[33mchunk_sort\x1B[0m");
-	if (want == 5)
+	if (want == 4)
 		return ("\x1B[35mradix_lsd\x1B[0m");
 	return ("\x1B[31mError    \x1B[0m");
 }
