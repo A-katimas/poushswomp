@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:50 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 16:43:18 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 11:49:43 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int		commande(char *what);
 void	whatiwant(int want, t_stack **a, t_stack **b);
 
 //benchmarck
-void whahedo(int want ,t_stack **a, t_stack **b);
-char *what_strategy(int want, t_stack **a);
-void print_bench(t_stack **list,float disorder,char *strategy);
+char	*what_strategy(int want, t_stack **a);
+void	print_bench(t_stack **list, float disorder, char *strategy);
 
 #endif

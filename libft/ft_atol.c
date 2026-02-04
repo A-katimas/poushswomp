@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 18:24:40 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 18:34:32 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 11:39:01 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long	ft_atol(const char *nptr)
 {
-	int	    i;
+	int		i;
 	long	nb;
 	long	sign;
 

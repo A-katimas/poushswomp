@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:30:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 17:03:53 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 11:42:23 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(var);
-	return (i-j);
+	return (i - j);
 }
 
 void	inhexa(unsigned int n, int i)

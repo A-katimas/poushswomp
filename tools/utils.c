@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/03 17:38:27 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 11:28:09 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,44 @@
 
 int	commande(char *what)
 {
-    if (!ft_strncmp(what, "simple", 6))
-        return (3);
-    else if (!ft_strncmp(what, "medium", 6))
-        return (4);
-    else if (!ft_strncmp(what, "complex", 7))
-        return (5);
-    else if (!ft_strncmp(what, "bench", 5))
-        return (10);
-    else if (!ft_strncmp(what, "bench", 5))
-        return (0);
+	if (!ft_strncmp(what, "simple", 6))
+		return (3);
+	else if (!ft_strncmp(what, "medium", 6))
+		return (4);
+	else if (!ft_strncmp(what, "complex", 7))
+		return (5);
+	else if (!ft_strncmp(what, "bench", 5))
+		return (10);
+	else if (!ft_strncmp(what, "bench", 5))
+		return (0);
 	else
 		return (0);
 }
 
-void	whatiwant(int want,  t_stack **a, t_stack **b)
+void	whatiwant(int want, t_stack **a, t_stack **b)
 {
-	int	size;
-	float disorder;
+	int		size;
+	float	disorder;
 
 	disorder = compute_disorder(a);
 	size = lenlist(a);
-    if (disorder == 0)
-        want = 1;
+	if (disorder == 0)
+		want = 1;
 	else if (size <= 3 && size > 1 && !*b)
 	{
 		sort_three(a);
 		return ;
 	}
-	if (want == 0 || want%10 == 0)
-        adaptative(a, b, disorder);
+	if (want == 0 || want % 10 == 0)
+		adaptative(a, b, disorder);
 	else if (want == 3 || want % 10 == 3)
-        chosetri(a, b);
-    else if (want == 4 || want % 10 == 4)
+		chosetri(a, b);
+	else if (want == 4 || want % 10 == 4)
 		chunk_sort(a, b);
-    else if (want == 5 || want % 10 == 5)
+	else if (want == 5 || want % 10 == 5)
 		radix_lsd(a, b);
-    if (want >= 6)
-        print_bench(a, disorder, what_strategy(want%10, a));
+	if (want >= 6)
+		print_bench(a, disorder, what_strategy(want % 10, a));
 }
 
 int	adaptative(t_stack **a, t_stack **b, float disorder)
@@ -69,7 +69,7 @@ int	adaptative(t_stack **a, t_stack **b, float disorder)
 	else if (disorder < 0.5)
 		chunk_sort(a, b);
 	else
-	    radix_lsd(a, b);
+		radix_lsd(a, b);
 	return (-1);
 }
 

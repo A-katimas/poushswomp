@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_use.c                                           :+:      :+:    :+:   */
+/*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:12:32 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/03 14:23:02 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/04 11:25:45 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "toolsswap.h"
 
-t_stack	*lstnew(int content,t_datastack *data)
+t_stack	*lstnew(int content, t_datastack *data)
 {
 	t_stack	*newlist;
 
 	newlist = ft_calloc(1, sizeof(t_stack));
 	if (newlist == NULL)
 		return (NULL);
-    newlist->datastack = data;
+	newlist->datastack = data;
 	newlist->data = content;
 	newlist->next = newlist;
 	newlist->prev = newlist;
@@ -45,10 +45,7 @@ void	nodesup(t_stack **lst, t_stack *sup)
 	t_stack	*point;
 
 	if (!lst || *lst == NULL )
-        {
-            lst = NULL;
-            return;
-        }
+		return ;
 	temp = sup->next;
 	point = sup->prev;
 	if (sup == sup->next)
@@ -90,18 +87,18 @@ int	lenlist(t_stack **stack)
 	return (i);
 }
 
-void datainit(t_datastack *data)
+void	datainit(t_datastack *data)
 {
-    data->sa = 0;
-    data->sb = 0;
-    data->ss = 0;
-    data->pa = 0;
-    data->pb = 0;
-    data->ra = 0;
-    data->rb = 0;
-    data->rr = 0;
-    data->rra = 0;
-    data->rrb = 0;
-    data->rrr = 0;
-    data->total = 0;
+	data->sa = 0;
+	data->sb = 0;
+	data->ss = 0;
+	data->pa = 0;
+	data->pb = 0;
+	data->ra = 0;
+	data->rb = 0;
+	data->rr = 0;
+	data->rra = 0;
+	data->rrb = 0;
+	data->rrr = 0;
+	data->total = 0;
 }
