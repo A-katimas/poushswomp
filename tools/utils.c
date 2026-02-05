@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:39:11 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/04 20:14:28 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/05 16:07:49 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	get_flags(int actual_flags, char *current_flags)
 	return (-1);
 }
 
-void	what_i_do(int want, t_stack **a, t_stack **b) // a changer
+void	what_i_do(int want, t_stack **a, t_stack **b)
 {
 	int		size;
 	float	disorder;
@@ -50,14 +50,16 @@ void	what_i_do(int want, t_stack **a, t_stack **b) // a changer
 		return ;
 	if (size <= 3 && size > 1 && !*b)
 		sort_three(a);
-	if (want % 10 == 1 || want % 10 == 0)
+	else if (size <= 5)
+		sort_five(a, b);
+	else if (want % 10 == 1 || want % 10 == 0)
 		adaptative(a, b, disorder);
-	if (want % 10 == 2)
+	else if (want % 10 == 2)
 		chosetri(a, b);
-	if (want % 10 == 3)
+	else if (want % 10 == 3)
 		chunk_sort(a, b);
-	if (want % 10 == 4)
-		radix_lsd(a, b);
+	else if (want % 10 == 4)
+		radix_lsb(a, b);
 	if (want > 9)
 		print_bench(a, disorder, get_strategy(want % 10, a));
 }
@@ -77,7 +79,7 @@ int	adaptative(t_stack **a, t_stack **b, float disorder)
 	else if (disorder < 0.5)
 		chunk_sort(a, b);
 	else
-		radix_lsd(a, b);
+		radix_lsb(a, b);
 	return (-1);
 }
 

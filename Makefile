@@ -1,6 +1,6 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3 -I librairie -I libft
+CFLAGS = -Wall -Werror -Wextra -I librairie -I libft
 
 LIBFT = libft/libft.a
 
@@ -9,7 +9,7 @@ TOOLS_SRC = tools/swap.c tools/push.c tools/rotation.c \
 
 
 ORDERS_SRC = orders/chunk_sort.c orders/chosetri.c orders/chunk_sort_utils.c \
-		orders/chunk_sort_utils2.c orders/sort_three.c orders/radix_LSD.c
+		orders/chunk_sort_utils2.c orders/sort_three.c orders/radix_lsb.c
 
 MAIN_SRC = pushswap.c
 

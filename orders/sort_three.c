@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 15:10:00 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/04 19:12:22 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/05 16:23:08 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "order.h"
+
+static int	get_min_pos(t_stack **a, int min)
+{
+	t_stack	*tmp;
+	int		pos;
+
+	tmp = *a;
+	pos = 0;
+	while (1)
+	{
+		if (tmp->data == min)
+			return (pos);
+		tmp = tmp->next;
+		pos++;
+	}
+}
 
 void	sort_three(t_stack **a)
 {
@@ -37,4 +53,28 @@ void	sort_three(t_stack **a)
 		(sa(a), ra(a));
 	else if (x < y && y > z && x > z)
 		rra(a);
+}
+
+void	sort_five(t_stack **a, t_stack **b)
+{
+	int	min;
+	int	pos;
+
+	if (list_size(a) <= 3)
+		return (sort_three(a), (void)0);
+	while (list_size(a) > 3)
+	{
+		min = find_min_a(a);
+		pos = get_min_pos(a, min);
+		if (pos <= list_size(a) / 2)
+			while (pos-- > 0)
+				ra(a);
+		else
+			while (pos++ < list_size(a))
+				rra(a);
+		pb(a, b);
+	}
+	sort_three(a);
+	pa(a, b);
+	pa(a, b);
 }

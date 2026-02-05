@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_LSD.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:08:51 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/04 19:12:22 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/05 08:57:24 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	max_bits_needed(int max_index)
 	return (bits);
 }
 
-void	radix_lsd(t_stack **a, t_stack **b)
+void	radix_lsb(t_stack **a, t_stack **b)
 {
 	int	size;
 	int	max_bits;

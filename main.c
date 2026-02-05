@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 18:08:45 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 20:39:52 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/05 15:26:47 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,13 @@ int	main(int ac, char **av)
 		flags = get_flags(flags, &av[i][2]);
 		i++;
 	}
-	if (init(av, &a, &b, &data) == 0 || list_size(&a) == 1)
-		return (0);
+	if (ft_is_number(av[i]))
+	{
+		if (init(av, &a, &b, &data) == 0 || list_size(&a) == 1)
+			return (0);
+	}
+	else
+		return (ft_printfd(2, "Error\n"));
 	what_i_do(flags, &a, &b);
 	while (a)
 		del_node(&a, a);
