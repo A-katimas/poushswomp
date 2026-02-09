@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 15:10:00 by aheno             #+#    #+#             */
-/*   Updated: 2026/02/05 16:23:08 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/09 09:40:35 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ void	sort_five(t_stack **a, t_stack **b)
 		pb(a, b);
 	}
 	sort_three(a);
-	pa(a, b);
-	pa(a, b);
+	while (*b)
+		pa(a, b);
 }
