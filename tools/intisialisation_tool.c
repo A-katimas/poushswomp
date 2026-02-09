@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intisialisation_tool.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:11:30 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/04 20:39:28 by jtardieu         ###   ########.fr       */
+/*   Updated: 2026/02/09 12:50:24 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	init_list(char **enter, int i, t_stack **a, t_datastack *data)
 		{
 			if (has_duplicated(ft_atoi(enter[i]), a) == 0)
 				return (0);
+			if (ft_atol(enter[i]) < INT_MIN || ft_atol(enter[i]) > INT_MAX)
+				return (0);
 			list_add(a, list_new(ft_atoi(enter[i]), data));
 		}
 		else
@@ -66,5 +68,7 @@ int	has_duplicated(int find, t_stack **stack)
 			return (0);
 		temp = temp->next;
 	}
+	if (find == temp->data)
+		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: aheno <aheno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:05:09 by jtardieu          #+#    #+#             */
-/*   Updated: 2026/02/05 16:39:21 by aheno            ###   ########.fr       */
+/*   Updated: 2026/02/09 12:54:44 by aheno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	print_bench(t_stack **list, float disorder, char *strategy)
 		(int)(disorder * 100), (int)(disorder * 10000) % 100);
 	ft_printfd(2, "|_______________________________|\n");
 	ft_printfd(2, "|                               |\n");
-	ft_printfd(2, "|strategy: %s      \t|\n", strategy);
+	ft_printfd(2, "|strategy: %s    \t|\n", strategy);
 	ft_printfd(2, "|_______________________________|\n");
 	ft_printfd(2, "|                               |\n");
 	ft_printfd(2, "|total_ops: %d          \t|\n", (*list)->datastack->total);
