@@ -54,6 +54,12 @@ make test
 make
 ./pushswap 324 124 1 23 4 5 1234 3251 5 342  5 32 5325 53 52 135 67 7664265
 ``
+for more choice you can use : 
+	--simple for the simple algorythme
+	--medium for the medium algorythme
+	--complex for the complex algorythme
+	--adaptative for chose the right algoryhtme on the disorder
+	--bench for see all the stats
 
 # Resources
 ```
